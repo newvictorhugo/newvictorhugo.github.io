@@ -67,7 +67,13 @@ body{
   font-weight: 600;
 }
     /* ------Def Animação | Formatação Menu------ */
-.navbar a{
+  .navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar a{
   font-size: 19px;
   color: var(--cor-principal2);
   margin-left: 27px;

@@ -26,12 +26,12 @@ body{
     color:var(--cor-texto);
   }
 
-.header{
+  .header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0 2% 0 2%;
+    padding: 0 5% 0 2%;
     display: flex;
     background-color: transparent;
     justify-content: space-between;
@@ -43,11 +43,9 @@ body{
     background-color: var(--fundo-cor);
 }
 
-.header .logotopo{
+.header .logo{
     display: flex;
     margin: 20px 10px 10px 0;
-    text-decoration: none;
-    color: #ffffff;
 }
 .imglogo{
     display: flex;

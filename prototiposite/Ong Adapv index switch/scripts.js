@@ -2,10 +2,7 @@
 let menuIcon = document.querySelector('#icone-menu');
 let navbar = document.querySelector('navbar');
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('bx-x');
-}
+
 //Scroll Sections //
 window.onscroll = () => {
     let Header = document.querySelector('header')
@@ -166,3 +163,4 @@ const touchSlide = (() => {
     // call mobile on touch end
     slider.addEventListener("touchend", mobile)
 })()
+
