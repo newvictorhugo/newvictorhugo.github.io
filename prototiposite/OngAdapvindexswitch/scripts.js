@@ -164,3 +164,9 @@ const touchSlide = (() => {
     slider.addEventListener("touchend", mobile)
 })()
 
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
