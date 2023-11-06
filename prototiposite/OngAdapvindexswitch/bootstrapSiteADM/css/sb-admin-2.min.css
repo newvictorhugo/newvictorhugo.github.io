@@ -85,8 +85,7 @@ body::after {
     align-items: center;
     width: 50px;
     float: left;
-    margin: 10px 10px 10px 0;
-
+    margin: 0 10px 0 0;
 }
 .nomelogo{
     font-weight: 600;
@@ -98,6 +97,7 @@ body::after {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 /* -----Inicio formulário de cadastro----- */
@@ -114,8 +114,7 @@ body::after {
     border-radius: 13px 13px 0 0;
     padding: 10px;
     color: black;
-    background: linear-gradient(to top,  #FF9B00 -100%, #828587 150%);
-    background-size: cover;
+    background-color: var(--paleta-laranja);
 }
 .div-principal .subtitulo-nome a{
     text-decoration: none;
@@ -10779,6 +10778,9 @@ a:focus {
 }
 .sidebar.toggled .nomelogo{
     display: none;
+}
+.sidebar.toggled .imglogo{
+    margin: 0;
 }
 
 .sidebar.toggled #sidebarToggle::after {
