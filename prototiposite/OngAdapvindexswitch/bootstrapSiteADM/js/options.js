@@ -50,52 +50,90 @@ if (nomeInput.value.trim() === '') {
   subtituloNome.textContent = 'Nome';
 }
 
-function botaoFavorito() {
-  var favoritoButton = document.getElementById('favorito-button');
-  var favoritoIcon = document.getElementById('favorito-icon');
+// Mudar estilo botão favorito
+function botaoFavorito(button) {
+  var favoritoButton = button;
+  var favoritoIcon = favoritoButton.querySelector('iconify-icon');
   var iconAtual = favoritoIcon.getAttribute('icon');
 
-  if(iconAtual === 'bi:star'){
+  if (iconAtual === 'bi:star') {
     favoritoIcon.setAttribute('icon', 'bi:star-fill');
     favoritoIcon.style.color = 'rgb(255, 230, 0)';
     favoritoButton.style.backgroundColor = 'var(--paleta-cinza)';
-  }else{
+  } else {
     favoritoIcon.setAttribute('icon', 'bi:star');
     favoritoIcon.style.color = '';
     favoritoButton.style.backgroundColor = '';
   }
-
 }
-document.addEventListener('DOMContentLoaded', toggleFavorito);
 
-document.addEventListener('DOMContentLoaded', function() {
-  var adicionarButton = document.getElementById('adicionar-button');
 
-  adicionarButton.addEventListener('click', function() {
-      var quebraVolunContato = document.querySelector('.quebra-volun-contato');
-      var clonedQuebraVolunContato = quebraVolunContato.cloneNode(true);
+// // Mudar as opções pelo select contato
+// var layouts = {
+//   'celular': document.getElementById('celular').cloneNode(true),
+//   'email': document.getElementById('email').cloneNode(true),
+//   'residencial': document.getElementById('residencial').cloneNode(true)
+// };
 
-      // Limpa os campos clonados (se desejar)
-      var inputFields = clonedQuebraVolunContato.querySelectorAll('input');
-      var selectFields = clonedQuebraVolunContato.querySelectorAll('select');
+// function selecionarOpcao(valor) {
+//   var container = document.querySelector('.quebra-volun-contato');
+  
+//   // Remover o layout atual
+//   while (container.firstChild) {
+//     container.removeChild(container.firstChild);
+//   }
 
-      inputFields.forEach(function(input) {
-          input.value = ''; // Limpa o valor do campo
-      });
+//   // Inserir o novo layout
+//   container.appendChild(layouts[valor]);
+// }
 
-      selectFields.forEach(function(select) {
-          select.value = select.querySelector('option').value; // Define o valor do primeiro item
-      });
+//! //////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ !\\
+// document.addEventListener('DOMContentLoaded', function () {
+//   // Duplicar as divs quando apertar o botão adicionar
+//   var adicionarButton = document.getElementById('adicionar-button');
 
-      // Insere o clone logo após o original
-      quebraVolunContato.parentNode.insertBefore(clonedQuebraVolunContato, quebraVolunContato.nextSibling);
+//   adicionarButton.addEventListener('click', function () {
+//     var quebraVolunContato = document.querySelector('.quebra-volun-contato');
+//     var clonedQuebraVolunContato = quebraVolunContato.cloneNode(true);
 
-      // Adiciona evento de clique para o botão "Excluir" no clone
-      var excluirButton = clonedQuebraVolunContato.querySelector('#excluir-button');
+//     // Limpa os campos clonados (se desejar)
+//     var inputFields = clonedQuebraVolunContato.querySelectorAll('input');
+//     var selectFields = clonedQuebraVolunContato.querySelectorAll('select');
 
-      excluirButton.addEventListener('click', function() {
-          clonedQuebraVolunContato.remove(); // Remove o clone quando o botão "Excluir" é clicado
-      });
-      
-  });
-});
+//     inputFields.forEach(function (input) {
+//       input.value = ''; // Limpa o valor do campo
+//     });
+
+//     selectFields.forEach(function (select) {
+//       select.value = select.querySelector('option').value; // Define o valor do primeiro item
+//     });
+
+//     // Insere o clone logo após o original
+//     quebraVolunContato.parentNode.insertBefore(clonedQuebraVolunContato, quebraVolunContato.nextSibling);
+
+//     // Adiciona evento de clique para o botão "Excluir" no clone
+//     var excluirButton = clonedQuebraVolunContato.querySelector('#excluir-button');
+
+//     excluirButton.addEventListener('click', function () {
+//       clonedQuebraVolunContato.remove(); // Remove o clone quando o botão "Excluir" é clicado
+//     });
+
+//     // Adiciona evento de clique para o botão "Favorito" no clone
+//     var favoritoButton = clonedQuebraVolunContato.querySelector('#favorito-button');
+
+//     favoritoButton.addEventListener('click', function () {
+//       botaoFavorito(favoritoButton);
+//     });
+
+//     // Adiciona evento de alteração do select no clone
+//     var selectContato = clonedQuebraVolunContato.querySelector('#contatos');
+//     selectContato.addEventListener('change', function () {
+//       selecionarOpcao(selectContato.value, clonedQuebraVolunContato);
+//     });
+//   });
+// });
+// ! ENTENDER COMO CLONAR ELEMENTOS
+// ! Dificuldade =>
+// ! Quando um elemento é clonado várias vezes com comandos JS aplicado em botões, inputs, select, etc e ele é usado/ativado apenas o elemento original ou primeiro elemento é alterado
+// ! Por exemplo, quero clonar um elemento como área de contato. Quero adicionar mais de um telefone logo eu duplico todas as características das opções anteriores, quando eu vou utilizar algum botão que existe js aplicado ele apenas aplica ao elemento original.
+// ! (Adicionar telefone 1 +), (Adicionar telefone 2 +), quando vou apertar no botão mais "+" para adicionar o "Adicionar telefone 3", ele só funciona se eu apertar no "Adicionar telefone 1", o botão do 2 é inutilizável.

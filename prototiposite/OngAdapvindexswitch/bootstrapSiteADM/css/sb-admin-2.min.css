@@ -193,6 +193,9 @@ body::after {
 .div-principal .opcao-geral .nomecompleto{
     width: 200%;
 }
+.div-principal .opcao-geral .titulocontato{
+    margin-top: 10px;
+}
 .div-principal .opcao-geral .quebra-volun-doc, .quebra-volun-detail, .quebra-volun-contato{
     display: flex;
     justify-content: space-between;
@@ -207,28 +210,29 @@ body::after {
 }
 .div-principal .opcao-geral .quebra-volun-contato{
     display: flex;
+    flex-direction: column;
     max-width: 100%;
     min-height: 100%;
-    margin-top: 10px;
-
 }
+
 .div-principal .opcao-geral .quebra-volun-contato input,
 .div-principal .opcao-geral .quebra-volun-contato select{
     width: 100%;
 }
-.sla{
+.celular, .email, .residencial{
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
     margin: 0 0 0 20px;
 }
-.sla input, .sla select{
+.quebra-volun-contato input, .quebra-volun-contato select{
     display: flex !important;
     width: 100%;
     flex: 1;
     margin-right: 10px;
 }
+
 .div-principal .opcao-geral .botoes{
     display: flex;
 }
@@ -247,10 +251,6 @@ body::after {
     transform: scale(1.1);
     background-color: rgb(255, 230, 0);
 
-}
-.div-principal .opcao-geral .botoes .adicionar button:hover{
-    transform: scale(1.1);
-    background-color: greenyellow;
 }
 .div-principal .opcao-geral .botoes .excluir button:hover{
     transform: scale(1.1);
