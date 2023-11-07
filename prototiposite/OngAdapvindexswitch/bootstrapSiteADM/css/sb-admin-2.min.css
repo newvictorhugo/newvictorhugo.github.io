@@ -162,6 +162,9 @@ body::after {
 }
 
 /* -----Opcão Geral----- */
+.div-principal input, select{
+    height: 30px;
+}
 .div-principal .opcao-geral {
     display: flex ;
     flex-direction: row;
@@ -174,6 +177,86 @@ body::after {
     max-height: 100%;
     transition: opacity 0.5s;
 }
+.div-principal .opcao-geral .quebra-volun-nomes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  
+}
+.div-principal .opcao-geral .opcao-geral-nomes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+}
+.div-principal .opcao-geral .nomecompleto{
+    width: 200%;
+}
+.div-principal .opcao-geral .quebra-volun-doc, .quebra-volun-detail, .quebra-volun-contato{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+.div-principal .opcao-geral .opcao-geral-docs{
+    width: 47%;
+}
+.div-principal .opcao-geral .opcao-geral-docs input{
+    width: 100%;
+}
+.div-principal .opcao-geral .quebra-volun-contato{
+    display: flex;
+    max-width: 100%;
+    min-height: 100%;
+    margin-top: 10px;
+
+}
+.div-principal .opcao-geral .quebra-volun-contato input,
+.div-principal .opcao-geral .quebra-volun-contato select{
+    width: 100%;
+}
+.sla{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin: 0 0 0 20px;
+}
+.sla input, .sla select{
+    display: flex !important;
+    width: 100%;
+    flex: 1;
+    margin-right: 10px;
+}
+.div-principal .opcao-geral .botoes{
+    display: flex;
+}
+.div-principal .opcao-geral .botoes button{
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    margin: 0 2px;
+    border: none;
+    border-radius: 8px;
+}
+.div-principal .opcao-geral .botoes button{
+    transition: 0.2s;
+}
+.div-principal .opcao-geral .botoes .favorito button:hover{
+    transform: scale(1.1);
+    background-color: rgb(255, 230, 0);
+
+}
+.div-principal .opcao-geral .botoes .adicionar button:hover{
+    transform: scale(1.1);
+    background-color: greenyellow;
+}
+.div-principal .opcao-geral .botoes .excluir button:hover{
+    transform: scale(1.1);
+    background-color: red;
+}
+
 .div-principal .opcao-geral label,
 .div-principal .opcao-extra label {
     display: block;
