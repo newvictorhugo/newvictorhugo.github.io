@@ -369,7 +369,7 @@
 
                         <div class="opcoes-de-cadastro">
                             <button type="button" id="botao-geral" class="ativo">Geral</button>
-                            <button type="button" id="botao-foto" class="">Foto</button>
+                            <button type="button" id="botao-foto" class="">Endereço</button>
                             <button type="button" id="botao-extra" class="">Extra</button>
                         </div>
                         <div class="opcao-geral" id="opcao-geral">
@@ -389,17 +389,21 @@
                             <div class="quebra-volun-doc">
                                 <div class="opcao-geral-docs">
                                     <label for="">CPF</label>
-                                    <input type="text" placeholder="000.000.000-00">
+                                    <input type="text" placeholder="000.000.000-00"
+                                        onkeyup="mCpf(this)" maxlength="14"
+                                        onblur="validarCPF(this)"/>
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">RG</label>
-                                    <input type="text" placeholder="00.000.000-0">
+                                    <input type="text" placeholder="00.000.000-0" maxlength="12"
+                                    onkeyup="vRG(this)">
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
                                 <div class="opcao-geral-divs">
                                     <label for="">Nascimento</label>
-                                    <input type="text" id="datanascimento" placeholder="dd/mm/aaaa">
+                                    <input type="text" id="datanascimento" placeholder="dd/mm/aaaa" maxlength="10"
+                                    onkeyup="vData(this)">
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Nacionalidade<span>*</span></label>
@@ -429,7 +433,8 @@
                                         </select>
                                     </div>
                                     <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Digite o numero de Celular">
+                                        <input type="text" placeholder="Digite o numero de Celular" maxlength="14" 
+                                        onkeyup="mTel(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <select name="wpp" id="wpp">
@@ -461,7 +466,8 @@
                                         </select>
                                     </div>
                                     <div class="opcao-geral-divs">
-                                        <input type="text" class="textEmail" placeholder="Digite o numero de Celular">
+                                        <input type="text" class="textEmail" placeholder="Digite seu email"
+                                        onblur="vEmail(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <input type="text" placeholder="Observações">
@@ -486,7 +492,8 @@
                                         </select>
                                     </div>
                                     <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Digite o numero de Celular">
+                                        <input type="text" placeholder="Digite o numero de Telefone" maxlength="13"
+                                        onkeyup="mTel(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <input type="text" placeholder="Observações">
@@ -507,7 +514,8 @@
                             <div class="quebra-volun-nomes">
                                 <div class="opcao-geral-divs">
                                     <label for="">CEP<span></span> </label>
-                                    <input type="text">
+                                    <input type="text"
+                                        onkeypress="mCEP(this)"  maxlength="10"/>
                                 </div>
                                 <div class="opcao-geral-nomes">
                                     <label for="">Endereço<span></span></label>
@@ -515,7 +523,7 @@
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">Número</label>
-                                    <input type="text" placeholder="(00)00000-0000">
+                                    <input type="text" placeholder="">
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
@@ -625,7 +633,8 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!-- Register Change option -->
     <script src="js/options.js"></script>
-
+    <!-- VALIDAÇÃO -->
+    <script src="js/validaocao.js"></script>
 </body>
 
 </html>

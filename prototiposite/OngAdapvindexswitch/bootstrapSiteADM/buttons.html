@@ -399,7 +399,8 @@
                             <div class="quebra">
                                 <div class="opcao-geral-divs">
                                     <label for="">Nascimento</label>
-                                    <input type="text" id="datanascimento">
+                                    <input type="text" id="datanascimento" maxlength="10"
+                                    onkeyup="vData(this)">
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Espécie<span>*</span></label>
@@ -508,7 +509,8 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!-- Register Change option -->
     <script src="js/options.js"></script>
-
+    <!-- VALIDAÇÃO -->
+    <script src="js/validaocao.js"></script>
 </body>
 
 </html>
