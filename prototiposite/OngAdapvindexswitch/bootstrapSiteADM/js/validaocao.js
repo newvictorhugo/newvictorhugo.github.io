@@ -138,3 +138,25 @@ function mTel () {
         //event.target.focus();
     }
 }
+
+function vCampos() {
+    var campos = [
+        { id: "nome", nome: "Nome"},
+        { id: "campoCPF", nome: "CPF", validacao: validarCPF },
+        { id: "campoCEP", nome: "CEP", validacao: mCEP },
+        { id: "campoData", nome: "Data", validacao: vData },
+        { id: "campoRG", nome: "RG", validacao: vRG },
+        { id: "campoTel", nome: "Telefone", validacao: mTel },
+        { id: "campoEmail", nome: "Email", validacao: vEmail }
+    ];
+    var campo
+    for (var i = 0; i < campos.length; i++) {
+        campo = document.getElementById(campos[i].id);
+        if (!campo.value) {
+            alert("O campo " + campos[i].nome + " não foi preenchido.");
+            return false;
+        }
+        campos[i].validacao();
+    }
+    return true;
+}

@@ -12,7 +12,8 @@
     <title>GuiaPet - Cadastrar Voluntários</title>
 
     <!-- Custom fonts for this template-->
-    <link href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/vendor/fontawesome-free/css/all.min.css"
+        rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -266,8 +267,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -278,8 +278,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -290,8 +289,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -323,8 +321,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -358,12 +355,14 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Cadastrar Voluntários</h1><!--! Colocar filtragem, completar com as informações cada input e select, implementar funcionalidade de salvar. -->
+                    <h1 class="h3 mb-4 text-gray-800">Cadastrar Voluntários</h1>
+                    <!--! Colocar filtragem, completar com as informações cada input e select, implementar funcionalidade de salvar. -->
                     <div class="div-principal">
                         <div class="subtitulo-nome">
                             <h5><b>Nome</b></h5>
                             <a href="index.html">
-                                <button type="button"><iconify-icon icon="mingcute:arrow-up-fill" rotate="270deg"></iconify-icon>Voltar</button>
+                                <button type="button"><iconify-icon icon="mingcute:arrow-up-fill"
+                                        rotate="270deg"></iconify-icon>Voltar</button>
                             </a>
                         </div>
 
@@ -383,27 +382,26 @@
                                 </div>
                                 <div class="opcao-geral-nomes">
                                     <label for="">Nome Completo<span>*</span></label>
-                                    <input type="text" id="nome" class="nomecompleto" placeholder="Digite o nome do voluntário">
+                                    <input type="text" id="nome" class="nomecompleto"
+                                        placeholder="Digite o nome do voluntário">
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
                                 <div class="opcao-geral-docs">
-                                    <label for="">CPF</label>
-                                    <input type="text" placeholder="000.000.000-00"
-                                        onkeyup="mCpf(this)" maxlength="14"
-                                        onblur="validarCPF(this)"/>
+                                    <label for="">CPF<span>*</span></label>
+                                    <input type="text" id="campoCPF" placeholder="000.000.000-00" onkeyup="mCpf(this)"
+                                        maxlength="14" onblur="validarCPF(this)" />
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">RG</label>
-                                    <input type="text" placeholder="00.000.000-0" maxlength="12"
-                                    onkeyup="vRG(this)">
+                                    <input type="text" placeholder="00.000.000-0" maxlength="12" onkeyup="vRG(this)">
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
                                 <div class="opcao-geral-divs">
                                     <label for="">Nascimento</label>
                                     <input type="text" id="datanascimento" placeholder="dd/mm/aaaa" maxlength="10"
-                                    onkeyup="vData(this)">
+                                        onkeyup="vData(this)">
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Nacionalidade<span>*</span></label>
@@ -432,9 +430,9 @@
                                             <option value="residencial">Residencial</option>
                                         </select>
                                     </div>
-                                    <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Digite o numero de Celular" maxlength="14" 
-                                        onkeyup="mTel(this)">
+                                    <div class="opcao-geral-divss">
+                                        <input type="text" placeholder="(00)00000-0000" maxlength="14"
+                                            onkeyup="mTel(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <select name="wpp" id="wpp">
@@ -448,10 +446,12 @@
                                     </div>
                                     <div class="botoes">
                                         <div class="favorito">
-                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon id="favorito-icon" icon="bi:star"></iconify-icon></button>
+                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon
+                                                    id="favorito-icon" icon="bi:star"></iconify-icon></button>
                                         </div>
                                         <div class="excluir">
-                                            <button id="excluir-button"><iconify-icon id="excluir-icon" icon="tabler:trash"></iconify-icon></button>
+                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
+                                                    icon="tabler:trash"></iconify-icon></button>
                                         </div>
                                     </div>
                                 </div>
@@ -467,17 +467,19 @@
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <input type="text" class="textEmail" placeholder="Digite seu email"
-                                        onblur="vEmail(this)">
+                                            onblur="vEmail(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <input type="text" placeholder="Observações">
                                     </div>
                                     <div class="botoes">
                                         <div class="favorito">
-                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon id="favorito-icon" icon="bi:star"></iconify-icon></button>
+                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon
+                                                    id="favorito-icon" icon="bi:star"></iconify-icon></button>
                                         </div>
                                         <div class="excluir">
-                                            <button id="excluir-button"><iconify-icon id="excluir-icon" icon="tabler:trash"></iconify-icon></button>
+                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
+                                                    icon="tabler:trash"></iconify-icon></button>
                                         </div>
                                     </div>
                                 </div>
@@ -492,34 +494,36 @@
                                         </select>
                                     </div>
                                     <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Digite o numero de Telefone" maxlength="13"
-                                        onkeyup="mTel(this)">
+                                        <input type="text" placeholder="(00)0000-0000" maxlength="13"
+                                            onkeyup="mTel(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <input type="text" placeholder="Observações">
                                     </div>
                                     <div class="botoes">
                                         <div class="favorito">
-                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon id="favorito-icon" icon="bi:star"></iconify-icon></button>
+                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon
+                                                    id="favorito-icon" icon="bi:star"></iconify-icon></button>
                                         </div>
                                         <div class="excluir">
-                                            <button id="excluir-button"><iconify-icon id="excluir-icon" icon="tabler:trash"></iconify-icon></button>
+                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
+                                                    icon="tabler:trash"></iconify-icon></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="opcao-foto opcao-geral" id="opcao-foto" style="display: none;">
                             <div class="quebra-volun-nomes">
                                 <div class="opcao-geral-divs">
-                                    <label for="">CEP<span></span> </label>
-                                    <input type="text"
-                                        onkeypress="mCEP(this)"  maxlength="10"/>
+                                    <label for="">CEP</label>
+                                    <input type="text" onkeypress="mCEP(this)" maxlength="10" placeholder="00.000-000">
                                 </div>
                                 <div class="opcao-geral-nomes">
-                                    <label for="">Endereço<span></span></label>
-                                    <input type="text" id="nome" class="nomecompleto" placeholder="Endereço do voluntário">
+                                    <label for="">Endereço</label>
+                                    <input type="text" id="nome" class="nomecompleto"
+                                        placeholder="Endereço do voluntário">
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">Número</label>
@@ -527,7 +531,7 @@
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
-                                
+
                                 <div class="opcao-geral-docs">
                                     <label for="">Bairro</label>
                                     <input type="text" placeholder="">
@@ -538,40 +542,160 @@
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
-                                
+
                                 <div class="opcao-geral-divs">
                                     <label for="">Cidade</label>
-                                    <select name="nacionalidade" id="nacionalidade">
-                                        <option value=""></option>
-                                        <option value=""></option>
+                                    <select name="City" id="Citys">
+                                        <option value="Selecione...">Selecione...</option>
+                                        <option value="Americana">Americana</option>
+                                        <option value="Araraquara">Araraquara</option>
+                                        <option value="Atibaia">Atibaia</option>
+                                        <option value="Barueri">Barueri</option>
+                                        <option value="Bauru">Bauru</option>
+                                        <option value="Botucatu">Botucatu</option>
+                                        <option value="Bragança Paulista">Bragança Paulista</option>
+                                        <option value="Campinas">Campinas</option>
+                                        <option value="Cotia">Cotia</option>
+                                        <option value="Diadema">Diadema</option>
+                                        <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                                        <option value="Franca">Franca</option>
+                                        <option value="Guarulhos">Guarulhos</option>
+                                        <option value="Hortolândia">Hortolândia</option>
+                                        <option value="Indaiatuba">Indaiatuba</option>
+                                        <option value="Itanhaém">Itanhaém</option>
+                                        <option value="Itapevi">Itapevi</option>
+                                        <option value="Itaquaquecetuba">Itaquaquecetuba</option>
+                                        <option value="Itu">Itu</option>
+                                        <option value="Jacareí">Jacareí</option>
+                                        <option value="Jundiaí">Jundiaí</option>
+                                        <option value="Limeira">Limeira</option>
+                                        <option value="Marília">Marília</option>
+                                        <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                                        <option value="Osasco">Osasco</option>
+                                        <option value="Pindamonhangaba">Pindamonhangaba</option>
+                                        <option value="Piracicaba">Piracicaba</option>
+                                        <option value="Presidente Prudente">Presidente Prudente</option>
+                                        <option value="Ribeirão Preto">Ribeirão Preto</option>
+                                        <option value="Santo André">Santo André</option>
+                                        <option value="Santos">Santos</option>
+                                        <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                                        <option value="São Caetano do Sul">São Caetano do Sul</option>
+                                        <option value="São Carlos">São Carlos</option>
+                                        <option value="São José dos Campos">São José dos Campos</option>
+                                        <option value="São Paulo">São Paulo</option>
+                                        <option value="São Vicente">São Vicente</option>
+                                        <option value="Sorocaba">Sorocaba</option>
+                                        <option value="Sumaré">Sumaré</option>
+                                        <option value="Suzano">Suzano</option>
+                                        <option value="Taubaté">Taubaté</option>
                                     </select>
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Estado</label>
-                                    <select name="genero" id="genero">
+                                    <select name="Estadu" id="Estadu">
                                         <option value="selecione">Selecione...</option>''
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
+                                        <option value="Selecione...">Selecione...</option>
+                                        <!-- Acre -->
+                                        <option value="Rio Branco">Rio Branco</option>
+                                        <option value="Cruzeiro do Sul">Cruzeiro do Sul</option>
+                                        <option value="Senador Guiomard">Senador Guiomard</option>
+                                        <option value="Tarauacá">Tarauacá</option>
+                                        <option value="Feijó">Feijó</option>
+
+                                        <!-- Alagoas -->
+                                        <option value="Maceió">Maceió</option>
+                                        <option value="Arapiraca">Arapiraca</option>
+                                        <option value="Palmeira dos Índios">Palmeira dos Índios</option>
+                                        <option value="Rio Largo">Rio Largo</option>
+                                        <option value="União dos Palmares">União dos Palmares</option>
+
+                                        <!-- Amapá -->
+                                        <option value="Macapá">Macapá</option>
+                                        <option value="Santana">Santana</option>
+                                        <option value="Laranjal do Jari">Laranjal do Jari</option>
+                                        <option value="Oiapoque">Oiapoque</option>
+                                        <option value="Porto Grande">Porto Grande</option>
+
+                                        <!-- Amazonas -->
+                                        <option value="Manaus">Manaus</option>
+                                        <option value="Parintins">Parintins</option>
+                                        <option value="Itacoatiara">Itacoatiara</option>
+                                        <option value="Manacapuru">Manacapuru</option>
+                                        <option value="Coari">Coari</option>
+
+                                        <!-- Bahia -->
+                                        <option value="Salvador">Salvador</option>
+                                        <option value="Feira de Santana">Feira de Santana</option>
+                                        <option value="Vitória da Conquista">Vitória da Conquista</option>
+                                        <option value="Camaçari">Camaçari</option>
+                                        <option value="Juazeiro">Juazeiro</option>
+
+                                        <!-- Ceará -->
+                                        <option value="Fortaleza">Fortaleza</option>
+                                        <option value="Caucaia">Caucaia</option>
+                                        <option value="Juazeiro do Norte">Juazeiro do Norte</option>
+                                        <option value="Maracanaú">Maracanaú</option>
+                                        <option value="Sobral">Sobral</option>
+
+                                        <!-- Espírito Santo -->
+                                        <option value="Vitória">Vitória</option>
+                                        <option value="Vila Velha">Vila Velha</option>
+                                        <option value="Serra">Serra</option>
+                                        <option value="Cariacica">Cariacica</option>
+                                        <option value="Linhares">Linhares</option>
+
+                                        <!-- Goiás -->
+                                        <option value="Goiânia">Goiânia</option>
+                                        <option value="Aparecida de Goiânia">Aparecida de Goiânia</option>
+                                        <option value="Anápolis">Anápolis</option>
+                                        <option value="Rio Verde">Rio Verde</option>
+                                        <option value="Luziânia">Luziânia</option>
+
+                                        <!-- Maranhão -->
+                                        <option value="São Luís">São Luís</option>
+                                        <option value="Imperatriz">Imperatriz</option>
+                                        <option value="São José de Ribamar">São José de Ribamar</option>
+                                        <option value="Timon">Timon</option>
+                                        <option value="Caxias">Caxias</option>
+
+                                        <!-- Mato Grosso -->
+                                        <option value="Cuiabá">Cuiabá</option>
+                                        <option value="Várzea Grande">Várzea Grande</option>
+                                        <option value="Rondonópolis">Rondonópolis</option>
+                                        <option value="Sinop">Sinop</option>
+                                        <option value="Tangará da Serra">Tangará da Serra</option>
+
+                                        <!-- Mato Grosso do Sul -->
+                                        <option value="Campo Grande">Campo Grande</option>
+                                        <option value="Dourados">Dourados</option>
+                                        <option value="Três Lagoas">Três Lagoas</option>
+                                        <option value="Corumbá">Corumbá</option>
+                                        <option value="Ponta Porã">Ponta Porã</option>
+
+                                        <!-- Minas Gerais -->
+                                        <option value="Belo Horizonte">Belo Horizonte</option>
+                                        <option value="Uberlândia">Uberlândia</option>
+                                        <option value="Contagem">Contagem</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="opcao-extra"id="opcao-extra" style="display: none;">
+                        <div class="opcao-extra" id="opcao-extra" style="display: none;">
 
-                                <label for="">Marcações</label>
-                                <textarea cols="30" rows="10"></textarea>
-                                <label for="">Observações</label>
-                                <textarea cols="30" rows="10"></textarea>
-                                <p>Sugestões: Alergias, preferência de afazeres. aptidões, dias disponíveis para ajudar, etc.</p>
+                            <label for="">Marcações</label>
+                            <textarea cols="30" rows="10"></textarea>
+                            <label for="">Observações</label>
+                            <textarea cols="30" rows="10"></textarea>
+                            <p>Sugestões: Alergias, preferência de afazeres. aptidões, dias disponíveis para ajudar,
+                                etc.</p>
                         </div>
                         <div class="confirm">
-                            <button type="button" class="confirmar">Salvar</button>
-                            <button type="button" class="cancelar">Cancelar</button>
+                            <button type="button" class="confirmar" onclick="vCampos()">Salvar</button>
+                            <a href="buttons.html"><button type="button" class="cancelar">Cancelar</button></a>
                         </div>
                     </div>
 
-                    
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -583,7 +707,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; WireLock 2020</span>
+                        <span>Copyright &copy; WireLock 2023</span>
                     </div>
                 </div>
             </footer>
