@@ -99,40 +99,6 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -376,8 +342,8 @@
                                 <div class="opcao-geral-divs">
                                     <label for="">Tipo(Pessoa física/Jurídica)<span>*</span> </label>
                                     <select name="tipopessoa" id="tipopessoa">
-                                        <option value="PessoaFisica">Pessoa Física</option>
-                                        <option value="PessoaJuridica">Pessoa Jurídica</option>
+                                        <option value="Pessoa Fisica">Pessoa Física</option>
+                                        <option value="Pessoa Juridica">Pessoa Jurídica</option>
                                     </select>
                                 </div>
                                 <div class="opcao-geral-nomes">
@@ -394,12 +360,12 @@
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">RG</label>
-                                    <input type="text" placeholder="00.000.000-0" maxlength="12" onkeyup="vRG(this)">
+                                    <input type="text" id="campoRG" placeholder="00.000.000-0" maxlength="12" onkeyup="vRG(this)">
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
                                 <div class="opcao-geral-divs">
-                                    <label for="">Nascimento</label>
+                                    <label for="">Nascimento<span>*</span></label>
                                     <input type="text" id="datanascimento" placeholder="dd/mm/aaaa" maxlength="10"
                                         onkeyup="vData(this)">
                                 </div>
@@ -431,7 +397,7 @@
                                         </select>
                                     </div>
                                     <div class="opcao-geral-divss">
-                                        <input type="text" placeholder="(00)00000-0000" maxlength="14"
+                                        <input type="text" id="campoCel" placeholder="(00)00000-0000" maxlength="14"
                                             onkeyup="mTel(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
@@ -466,7 +432,7 @@
                                         </select>
                                     </div>
                                     <div class="opcao-geral-divs">
-                                        <input type="text" class="textEmail" placeholder="Digite seu email"
+                                        <input type="text" id="campoEmail" class="textEmail" placeholder="Digite seu email"
                                             onblur="vEmail(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
@@ -494,7 +460,7 @@
                                         </select>
                                     </div>
                                     <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="(00)0000-0000" maxlength="13"
+                                        <input type="text" id="campoTel" placeholder="(00)0000-0000" maxlength="13"
                                             onkeyup="mTel(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
@@ -518,16 +484,16 @@
                             <div class="quebra-volun-nomes">
                                 <div class="opcao-geral-divs">
                                     <label for="">CEP</label>
-                                    <input type="text" onkeypress="mCEP(this)" maxlength="10" placeholder="00.000-000">
+                                    <input type="text" id="campoCEP" onkeypress="mCEP(this)" maxlength="10" placeholder="00.000-000">
                                 </div>
                                 <div class="opcao-geral-nomes">
                                     <label for="">Endereço</label>
-                                    <input type="text" id="nome" class="nomecompleto"
+                                    <input type="text" id="campoEndereco" class="nomecompleto"
                                         placeholder="Endereço do voluntário">
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">Número</label>
-                                    <input type="text" placeholder="">
+                                    <input type="number" id="campoNum" placeholder="">
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
@@ -544,7 +510,7 @@
                             <div class="quebra-volun-detail">
 
                                 <div class="opcao-geral-divs">
-                                    <label for="">Cidade</label>
+                                    <label for="">Cidade<span>*</span></label>
                                     <select name="City" id="Citys">
                                         <option value="Selecione...">Selecione...</option>
                                         <option value="Americana">Americana</option>
@@ -591,9 +557,8 @@
                                     </select>
                                 </div>
                                 <div class="opcao-geral-divs">
-                                    <label for="">Estado</label>
+                                    <label for="">Estado<span>*</span></label>
                                     <select name="Estadu" id="Estadu">
-                                        <option value="selecione">Selecione...</option>''
                                         <option value="Selecione...">Selecione...</option>
                                         <!-- Acre -->
                                         <option value="Rio Branco">Rio Branco</option>
@@ -690,8 +655,8 @@
                                 etc.</p>
                         </div>
                         <div class="confirm">
-                            <button type="button" class="confirmar" onclick="vCampos()">Salvar</button>
-                            <a href="buttons.html"><button type="button" class="cancelar">Cancelar</button></a>
+                            <button type="button" class="confirmar" onclick="adicionarItem2()">Salvar</button>
+                            <a href="cards.html"><button type="button" class="cancelar">Cancelar</button></a>
                         </div>
                     </div>
 
@@ -699,7 +664,12 @@
 
                 </div>
                 <!-- /.container-fluid -->
+                
+            </div>
+            <div>
+                <table class="myTable" id="tabela">
 
+                </table>
             </div>
             <!-- End of Main Content -->
 
@@ -759,6 +729,8 @@
     <script src="js/options.js"></script>
     <!-- VALIDAÇÃO -->
     <script src="js/validaocao.js"></script>
+    <!-- ADICIONAR TABELA -->
+    <script src="js/tabela.js"></script>
 </body>
 
 </html>

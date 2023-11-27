@@ -90,49 +90,18 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <h6 class="collapse-header">Opções:</h6>
+                        <a class="collapse-item" href="buttons.html">Animais</a>
+                        <a class="collapse-item" href="cards.html">Voluntários</a>
+                        <a class="collapse-item" href="cards.html">Projetos</a>
+                        <a class="collapse-item" href="cards.html">Empresas</a>
+                        <a class="collapse-item" href="cards.html">Adoções</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -381,18 +350,18 @@
                                     <label for="">Sexo<span>*</span></label>
                                     <select name="sexo" id="sexo">
                                         <option value="selecione">Selecione...</option>
-                                        <option value="M">Macho</option>
-                                        <option value="F">Fêmea</option>
-                                        <option value="I">Indefinido</option>
+                                        <option value="Macho">Macho</option>
+                                        <option value="Femea">Fêmea</option>
+                                        <option value="Indefinido">Indefinido</option>
                                     </select>
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Esterilização</label>
                                     <select name="ester" id="ester">
                                         <option value="selecione">Selecione...</option>
-                                        <option value="fertil">Fertil</option>
-                                        <option value="castrado">Castrado</option>
-                                        <option value="vasectomia">Vasectomia</option>
+                                        <option value="Fertil">Fertil</option>
+                                        <option value="Castrado">Castrado</option>
+                                        <option value="Vasectomia">Vasectomia</option>
                                     </select>
                                 </div>
                             </div>
@@ -406,8 +375,8 @@
                                     <label for="">Espécie<span>*</span></label>
                                     <select name="especie" id="especie">
                                         <option value="selecione">Selecione...</option>
-                                        <option value="canino">Canino</option>
-                                        <option value="felino">Felino</option>
+                                        <option value="Canino">Canino</option>
+                                        <option value="Felino">Felino</option>
                                         <option value="Outros">Outros</option>
                                     </select>
                                 </div>
@@ -535,13 +504,18 @@
                             <p>* Cuidados especificos, alimentação, doença, medicações, tratamentos, etc.</p>
                         </div>
                         <div class="confirm">
-                            <button type="button" class="confirmar" onclick="vCampos()">Salvar</button>
+                            <button type="button" class="confirmar" onclick="adicionarItem2()">Salvar</button>
                             <a href="buttons.html"><button type="button" class="cancelar">Cancelar</button></a>
                         </div>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
 
+            </div>
+            <div>
+                <table class="myTable" id="tabela">
+
+                </table>
             </div>
             <!-- End of Main Content -->
 
@@ -601,6 +575,8 @@
     <script src="js/options.js"></script>
     <!-- VALIDAÇÃO -->
     <script src="js/validaocao.js"></script>
+    <!-- TABELA -->
+    <script src="js/tabelaanimal.js"></script>
 </body>
 
 </html>

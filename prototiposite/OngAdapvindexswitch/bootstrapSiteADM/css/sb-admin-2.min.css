@@ -357,6 +357,15 @@ body::after {
     background-color: rgb(172, 172, 172);
 }
 
+.myTable{
+    margin: 20px 0 0 25px;
+    width: 96%;
+    border: 1px solid #000;
+}
+.myTable tr,td,th{
+    border: 1px solid #000;
+}
+
 
 hr {
     box-sizing: content-box;

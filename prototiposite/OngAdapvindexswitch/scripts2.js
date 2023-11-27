@@ -46,3 +46,12 @@ function validarCampo(){
         location.reload();
     }
 }
+function vEmail() {
+    var email = event.target.value;
+    var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+    if (!regex.test(email)) {
+        alert("Ops... Ocorreu um problema... E-mail precisa ter @ e .com");
+        //event.target.focus();
+    }
+}
