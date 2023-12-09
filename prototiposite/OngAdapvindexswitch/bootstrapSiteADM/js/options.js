@@ -137,3 +137,38 @@ function botaoFavorito(button) {
 // ! Quando um elemento é clonado várias vezes com comandos JS aplicado em botões, inputs, select, etc e ele é usado/ativado apenas o elemento original ou primeiro elemento é alterado
 // ! Por exemplo, quero clonar um elemento como área de contato. Quero adicionar mais de um telefone logo eu duplico todas as características das opções anteriores, quando eu vou utilizar algum botão que existe js aplicado ele apenas aplica ao elemento original.
 // ! (Adicionar telefone 1 +), (Adicionar telefone 2 +), quando vou apertar no botão mais "+" para adicionar o "Adicionar telefone 3", ele só funciona se eu apertar no "Adicionar telefone 1", o botão do 2 é inutilizável.
+
+window.onload = function() {
+  document.getElementById("botaofile").addEventListener("click", function() {
+      document.getElementById("inputfile").click();
+  });
+
+  document.getElementById("inputfile").addEventListener("change", function() {
+      var file = this.files[0];
+      if (file) {
+          var reader = new FileReader();
+          reader.onload = function(event) {
+              document.getElementById("preview").src = event.target.result;
+              document.getElementById("preview").style.display = "block";
+          };
+          reader.readAsDataURL(file);
+      }
+  });
+};
+
+document.getElementById('doado').addEventListener('change', function() {
+  // Esconde todas as divs
+  var divs = document.querySelectorAll('.dinheiro, .racao, .remedio');
+  divs.forEach(function(div) {
+      div.style.display = 'none';
+  });
+
+  // Mostra a div correspondente à seleção
+  var selectedValue = this.value;
+  if(selectedValue !== 'selecione') {
+      var selectedDiv = document.querySelector('.' + selectedValue);
+      if(selectedDiv) {
+          selectedDiv.style.display = 'block';
+      }
+  }
+});

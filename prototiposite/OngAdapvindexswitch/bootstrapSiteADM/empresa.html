@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GuiaPet - Cadastrar Animais</title>
+    <title>GuiaPet - Cadastrar Empresa</title>
 
     <!-- Custom fonts for this template-->
     <link href="/OngAdapvindexswitch/bootstrapSiteADM/vendor/fontawesome-free/css/all.min.css"
@@ -91,18 +91,17 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Opções:</h6>
+                        <h6 class="collapse-header">Custom Utilities:</h6>
                         <a class="collapse-item" href="buttons.html">Animais</a>
                         <a class="collapse-item" href="cards.html">Voluntários</a>
-                        <a class="collapse-item" href="cards.html">Projetos</a>
-                        <a class="collapse-item" href="cards.html">Empresas</a>
-                        <a class="collapse-item" href="cards.html">Adoções</a>
+                        <a class="collapse-item" href="projetos.html">Projetos</a>
+                        <a class="collapse-item" href="empresa.html">Empresas</a>
+                        <a class="collapse-item" href="adocoes.html">Adoções</a>
+                        <a class="collapse-item" href="doacoes.html">Doações</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -325,7 +324,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Cadastrar Animal</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Cadastrar Empresa</h1>
                     <!--! Colocar filtragem, completar com as informações cada input e select, implementar funcionalidade de salvar. -->
                     <div class="div-principal">
                         <div class="subtitulo-nome">
@@ -338,180 +337,299 @@
 
                         <div class="opcoes-de-cadastro">
                             <button type="button" id="botao-geral" class="ativo">Geral</button>
-                            <button type="button" id="botao-foto" class="">Foto</button>
+                            <button type="button" id="botao-foto" class="">Endereço</button>
                             <button type="button" id="botao-extra" class="">Extra</button>
                         </div>
                         <div class="opcao-geral" id="opcao-geral">
-                            <div class="quebra">
-                                <div class="opcao-geral-divs">
-                                    <label for="">Nome<span>*</span></label>
-                                    <input type="text" id="nome" placeholder="Digite o nome do animal">
+                            <div class="quebra-volun-nomes">
+                                <div class="opcao-geral-nomes">
+                                    <label for="">Nome Completo<span>*</span></label>
+                                    <input type="text" id="nome" class="nomecompleto"
+                                        placeholder="Digite o nome do voluntário">
                                 </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Sexo<span>*</span></label>
-                                    <select name="sexo" id="sexo">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="Macho">Macho</option>
-                                        <option value="Femea">Fêmea</option>
-                                        <option value="Indefinido">Indefinido</option>
-                                    </select>
-                                </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Esterilização</label>
-                                    <select name="ester" id="ester">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="Fertil">Fertil</option>
-                                        <option value="Castrado">Castrado</option>
-                                        <option value="Vasectomia">Vasectomia</option>
-                                    </select>
+                                <div class="opcao-geral-docs">
+                                    <label for="">CNPJ<span>*</span></label>
+                                    <input type="text" id="CNPJ" placeholder="00.000.000/0000-00" onkeyup="mascara('##.###.###/####-##',this,event)" maxlength="18" onblur="validarCNPJ(this)" />
                                 </div>
                             </div>
-                            <div class="quebra">
-                                <div class="opcao-geral-divs">
-                                    <label for="">Nascimento</label>
-                                    <input type="text" id="campoData" maxlength="10" placeholder="dd/mm/aaaa"
-                                        onkeyup="vData(this)">
-                                </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Espécie<span>*</span></label>
-                                    <select name="especie" id="especie">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="Canino">Canino</option>
-                                        <option value="Felino">Felino</option>
-                                        <option value="Outros">Outros</option>
-                                    </select>
+                            <h6 class="titulocontato">Contatos<span>*</span></h6>
+                            <div class="quebra-volun-contato">
+                                <div class="celular">
+                                    <div class="opcao-geral-divs">
+                                        <select name="contatos" id="contatos" onchange="selecionarOpcao(this.value)">
+                                            <option value="celular">Celular</option>
+                                            <option value="email">Email</option>
+                                            <option value="residencial">Residencial</option>
+                                        </select>
+                                    </div>
+                                    <div class="opcao-geral-divss">
+                                        <input type="text" id="campoCel" placeholder="(00)00000-0000" maxlength="14"
+                                            onkeyup="mTel(this)">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <select name="wpp" id="wpp">
+                                            <option value="numewpp">Este número é WhatsApp?</option>
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <input type="text" placeholder="Observações">
+                                    </div>
+                                    <div class="botoes">
+                                        <div class="favorito">
+                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon
+                                                    id="favorito-icon" icon="bi:star"></iconify-icon></button>
+                                        </div>
+                                        <div class="excluir">
+                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
+                                                    icon="tabler:trash"></iconify-icon></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="quebra">
+                            <div class="quebra-volun-contato">
+                                <div class="email">
+                                    <div class="opcao-geral-divs">
+                                        <select name="contatos" id="contatos" onchange="selecionarOpcao(this.value)">
+                                            <option value="email">Email</option>
+                                            <option value="celular">Celular</option>
+                                            <option value="residencial">Residencial</option>
+                                        </select>
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <input type="text" id="campoEmail" class="textEmail" placeholder="Digite seu email"
+                                            onblur="vEmail(this)">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <input type="text" placeholder="Observações">
+                                    </div>
+                                    <div class="botoes">
+                                        <div class="favorito">
+                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon
+                                                    id="favorito-icon" icon="bi:star"></iconify-icon></button>
+                                        </div>
+                                        <div class="excluir">
+                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
+                                                    icon="tabler:trash"></iconify-icon></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quebra-volun-contato">
+                                <div class="residencial">
+                                    <div class="opcao-geral-divs">
+                                        <select name="contatos" id="contatos" onchange="selecionarOpcao(this.value)">
+                                            <option value="residencial">Residencial</option>
+                                            <option value="celular">Celular</option>
+                                            <option value="email">Email</option>
+                                        </select>
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <input type="text" id="campoTel" placeholder="(00)0000-0000" maxlength="13"
+                                            onkeyup="mTel(this)">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <input type="text" placeholder="Observações">
+                                    </div>
+                                    <div class="botoes">
+                                        <div class="favorito">
+                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon
+                                                    id="favorito-icon" icon="bi:star"></iconify-icon></button>
+                                        </div>
+                                        <div class="excluir">
+                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
+                                                    icon="tabler:trash"></iconify-icon></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="opcao-foto opcao-geral" id="opcao-foto" style="display: none;">
+                            <div class="quebra-volun-nomes">
                                 <div class="opcao-geral-divs">
-                                    <label for="">Raça</label>
-                                    <select name="raca" id="raca">
+                                    <label for="">CEP<span>*</span></label>
+                                    <input type="text" id="campoCEP" onkeypress="mCEP(this)" maxlength="10" placeholder="00.000-000">
+                                </div>
+                                <div class="opcao-geral-nomes">
+                                    <label for="">Rua<span>*</span></label>
+                                    <input type="text" id="campoRua" class="nomecompleto" placeholder="Rua da empresa">
+                                </div>
+                                <div class="opcao-geral-docs">
+                                    <label for="">Número<span>*</span></label>
+                                    <input type="number" id="campoNum" placeholder="xxx">
+                                </div>
+                            </div>
+                            <div class="quebra-volun-doc">
+
+                                <div class="opcao-geral-docs">
+                                    <label for="">Bairro<span>*</span></label>
+                                    <input type="text" placeholder="Bairro da Empresa">
+                                </div>
+                                <div class="opcao-geral-divs">
+                                    <label for="">Complemento</label>
+                                    <input type="text" id="datanascimento" placeholder="">
+                                </div>
+                            </div>
+                            <div class="quebra-volun-detail">
+
+                                <div class="opcao-geral-divs">
+                                    <label for="">Cidade<span>*</span></label>
+                                    <select name="City" id="Citys">
                                         <option value="Selecione...">Selecione...</option>
-                                        <option value="Labrador Retriever">Labrador Retriever</option>
-                                        <option value="Golden Retriever">Golden Retriever</option>
-                                        <option value="Beagle">Beagle</option>
-                                        <option value="Bulldog">Bulldog</option>
-                                        <option value="Poodle">Poodle</option>
-                                        <option value="Rottweiler">Rottweiler</option>
-                                        <option value="Yorkshire Terrier">Yorkshire Terrier</option>
-                                        <option value="Boxer">Boxer</option>
-                                        <option value="Dachshund">Dachshund</option>
-                                        <option value="Siberian Husky">Siberian Husky</option>
-                                        <option value="Doberman Pinscher">Doberman Pinscher</option>
-                                        <option value="Great Dane">Great Dane</option>
-                                        <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
-                                        <option value="Shih Tzu">Shih Tzu</option>
-                                        <option value="Boston Terrier">Boston Terrier</option>
-                                        <option value="Pomeranian">Pomeranian</option>
-                                        <option value="Chihuahua">Chihuahua</option>
-                                        <option value="German Shepherd">German Shepherd</option>
-                                        <option value="Australian Shepherd">Australian Shepherd</option>
-                                        <option value="Pug">Pug</option>
-                                        <option value="Border Collie">Border Collie</option>
-                                        <option value="Cocker Spaniel">Cocker Spaniel</option>
-                                        <option value="Shetland Sheepdog">Shetland Sheepdog</option>
-                                        <option value="French Bulldog">French Bulldog</option>
-                                        <option value="Maltese">Maltese</option>
-                                        <option value="Bull Terrier">Bull Terrier</option>
-                                        <option value="Basset Hound">Basset Hound</option>
-                                        <option value="American Staffordshire Terrier">American Staffordshire Terrier </option>
-                                        <option value="Shiba Inu">Shiba Inu</option>
-                                        <option value="Akita">Akita</option>
-                                        <option value="Bloodhound">Bloodhound</option>
-                                        <option value="Weimaraner">Weimaraner</option>
-                                        <option value="Bernese Mountain Dog">Bernese Mountain Dog</option>
-                                        <option value="Mastiff">Mastiff</option>
-                                        <option value="Saint Bernard">Saint Bernard</option>
-                                        <option value="Newfoundland">Newfoundland</option>
-                                        <option value="Samoyed">Samoyed</option>
-                                        <option value="Portuguese Water Dog">Portuguese Water Dog</option>
-                                        <option value="Irish Setter">Irish Setter</option>
-                                        <option value="Whippet">Whippet</option>
-
-                                        <option value="Yorkshire" style="color: red;">=====Gatos=====</option>
-
-                                        <option value="Maine Coon">Maine Coon</option>
-                                        <option value="Siamês">Siamês</option>
-                                        <option value="Persa">Persa</option>
-                                        <option value="Ragdoll">Ragdoll</option>
-                                        <option value="Bengal">Bengal</option>
-                                        <option value="Sphynx">Sphynx</option>
-                                        <option value="Abyssinian">Abyssinian</option>
-                                        <option value="British Shorthair">British Shorthair</option>
-                                        <option value="Burmese">Burmese</option>
-                                        <option value="Oriental Shorthair">Oriental Shorthair</option>
-                                        <option value="Scottish Fold">Scottish Fold</option>
-                                        <option value="Siamese">Siamese</option>
-                                        <option value="Siberian">Siberian</option>
-                                        <option value="Norwegian Forest Cat">Norwegian Forest Cat</option>
-                                        <option value="American Shorthair">American Shorthair</option>
-                                        <option value="Ragamuffin">Ragamuffin</option>
-                                        <option value="Devon Rex">Devon Rex</option>
-                                        <option value="Russian Blue">Russian Blue</option>
-                                        <option value="Egyptian Mau">Egyptian Mau</option>
-                                        <option value="Cornish Rex">Cornish Rex</option>
-                                        <option value="Tonkinese">Tonkinese</option>
-                                        <option value="Turkish Angora">Turkish Angora</option>
-                                        <option value="Manx">Manx</option>
-                                        <option value="Himalayan">Himalayan</option>
-                                        <option value="American Curl">American Curl</option>
-                                        <option value="Balinese">Balinese</option>
-                                        <option value="Bombay">Bombay</option>
-                                        <option value="Burmilla">Burmilla</option>
-                                        <option value="Chartreux">Chartreux</option>
-                                        <option value="Havana Brown">Havana Brown</option>
-                                        <option value="Japanese Bobtail">Japanese Bobtail</option>
-                                        <option value="Korat">Korat</option>
-                                        <option value="LaPerm">LaPerm</option>
-                                        <option value="Ocicat">Ocicat</option>
-                                        <option value="Somali">Somali</option>
-                                        <option value="Turkish Van">Turkish Van</option>
-                                        <option value="Exotic Shorthair">Exotic Shorthair</option>
-                                        <option value="Pixie-bob">Pixie-bob</option>
-
+                                        <option value="Americana">Americana</option>
+                                        <option value="Araraquara">Araraquara</option>
+                                        <option value="Atibaia">Atibaia</option>
+                                        <option value="Barueri">Barueri</option>
+                                        <option value="Bauru">Bauru</option>
+                                        <option value="Botucatu">Botucatu</option>
+                                        <option value="Bragança Paulista">Bragança Paulista</option>
+                                        <option value="Campinas">Campinas</option>
+                                        <option value="Cotia">Cotia</option>
+                                        <option value="Diadema">Diadema</option>
+                                        <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                                        <option value="Franca">Franca</option>
+                                        <option value="Guarulhos">Guarulhos</option>
+                                        <option value="Hortolândia">Hortolândia</option>
+                                        <option value="Indaiatuba">Indaiatuba</option>
+                                        <option value="Itanhaém">Itanhaém</option>
+                                        <option value="Itapevi">Itapevi</option>
+                                        <option value="Itaquaquecetuba">Itaquaquecetuba</option>
+                                        <option value="Itu">Itu</option>
+                                        <option value="Jacareí">Jacareí</option>
+                                        <option value="Jundiaí">Jundiaí</option>
+                                        <option value="Limeira">Limeira</option>
+                                        <option value="Marília">Marília</option>
+                                        <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                                        <option value="Osasco">Osasco</option>
+                                        <option value="Pindamonhangaba">Pindamonhangaba</option>
+                                        <option value="Piracicaba">Piracicaba</option>
+                                        <option value="Presidente Prudente">Presidente Prudente</option>
+                                        <option value="Ribeirão Preto">Ribeirão Preto</option>
+                                        <option value="Santo André">Santo André</option>
+                                        <option value="Santos">Santos</option>
+                                        <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                                        <option value="São Caetano do Sul">São Caetano do Sul</option>
+                                        <option value="São Carlos">São Carlos</option>
+                                        <option value="São José dos Campos">São José dos Campos</option>
+                                        <option value="São Paulo">São Paulo</option>
+                                        <option value="São Vicente">São Vicente</option>
+                                        <option value="Sorocaba">Sorocaba</option>
+                                        <option value="Sumaré">Sumaré</option>
+                                        <option value="Suzano">Suzano</option>
+                                        <option value="Taubaté">Taubaté</option>
                                     </select>
                                 </div>
                                 <div class="opcao-geral-divs">
-                                    <label for="">Pelagem</label>
-                                    <select name="pelagem" id="pelagem">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="Amarelo">Amarelo</option>
-                                        <option value="Preto c/ Branco">Preto c/ Branco</option>
-                                        <option value="Azul">Azul</option>
-                                        <option value="Branco">Branco</option>
-                                        <option value="Caramelo">Caramelo</option>
-                                        <option value="Preto c/ Branco">Preto c/ Branco</option>
-                                        <option value="Caramelo c/ Branco">Caramelo c/ Branco</option>
-                                        <option value="Cinza">Cinza</option>
-                                        <option value="Vermelho">Vermelho</option>
-                                        <option value="Marrom">Marrom</option>
+                                    <label for="">Estado<span>*</span></label>
+                                    <select name="Estadu" id="Estadu">
+                                        <option value="Selecione...">Selecione...</option>
+                                        <!-- Acre -->
+                                        <option value="Rio Branco">Rio Branco</option>
+                                        <option value="Cruzeiro do Sul">Cruzeiro do Sul</option>
+                                        <option value="Senador Guiomard">Senador Guiomard</option>
+                                        <option value="Tarauacá">Tarauacá</option>
+                                        <option value="Feijó">Feijó</option>
+
+                                        <!-- Alagoas -->
+                                        <option value="Maceió">Maceió</option>
+                                        <option value="Arapiraca">Arapiraca</option>
+                                        <option value="Palmeira dos Índios">Palmeira dos Índios</option>
+                                        <option value="Rio Largo">Rio Largo</option>
+                                        <option value="União dos Palmares">União dos Palmares</option>
+
+                                        <!-- Amapá -->
+                                        <option value="Macapá">Macapá</option>
+                                        <option value="Santana">Santana</option>
+                                        <option value="Laranjal do Jari">Laranjal do Jari</option>
+                                        <option value="Oiapoque">Oiapoque</option>
+                                        <option value="Porto Grande">Porto Grande</option>
+
+                                        <!-- Amazonas -->
+                                        <option value="Manaus">Manaus</option>
+                                        <option value="Parintins">Parintins</option>
+                                        <option value="Itacoatiara">Itacoatiara</option>
+                                        <option value="Manacapuru">Manacapuru</option>
+                                        <option value="Coari">Coari</option>
+
+                                        <!-- Bahia -->
+                                        <option value="Salvador">Salvador</option>
+                                        <option value="Feira de Santana">Feira de Santana</option>
+                                        <option value="Vitória da Conquista">Vitória da Conquista</option>
+                                        <option value="Camaçari">Camaçari</option>
+                                        <option value="Juazeiro">Juazeiro</option>
+
+                                        <!-- Ceará -->
+                                        <option value="Fortaleza">Fortaleza</option>
+                                        <option value="Caucaia">Caucaia</option>
+                                        <option value="Juazeiro do Norte">Juazeiro do Norte</option>
+                                        <option value="Maracanaú">Maracanaú</option>
+                                        <option value="Sobral">Sobral</option>
+
+                                        <!-- Espírito Santo -->
+                                        <option value="Vitória">Vitória</option>
+                                        <option value="Vila Velha">Vila Velha</option>
+                                        <option value="Serra">Serra</option>
+                                        <option value="Cariacica">Cariacica</option>
+                                        <option value="Linhares">Linhares</option>
+
+                                        <!-- Goiás -->
+                                        <option value="Goiânia">Goiânia</option>
+                                        <option value="Aparecida de Goiânia">Aparecida de Goiânia</option>
+                                        <option value="Anápolis">Anápolis</option>
+                                        <option value="Rio Verde">Rio Verde</option>
+                                        <option value="Luziânia">Luziânia</option>
+
+                                        <!-- Maranhão -->
+                                        <option value="São Luís">São Luís</option>
+                                        <option value="Imperatriz">Imperatriz</option>
+                                        <option value="São José de Ribamar">São José de Ribamar</option>
+                                        <option value="Timon">Timon</option>
+                                        <option value="Caxias">Caxias</option>
+
+                                        <!-- Mato Grosso -->
+                                        <option value="Cuiabá">Cuiabá</option>
+                                        <option value="Várzea Grande">Várzea Grande</option>
+                                        <option value="Rondonópolis">Rondonópolis</option>
+                                        <option value="Sinop">Sinop</option>
+                                        <option value="Tangará da Serra">Tangará da Serra</option>
+
+                                        <!-- Mato Grosso do Sul -->
+                                        <option value="Campo Grande">Campo Grande</option>
+                                        <option value="Dourados">Dourados</option>
+                                        <option value="Três Lagoas">Três Lagoas</option>
+                                        <option value="Corumbá">Corumbá</option>
+                                        <option value="Ponta Porã">Ponta Porã</option>
+
+                                        <!-- Minas Gerais -->
+                                        <option value="Belo Horizonte">Belo Horizonte</option>
+                                        <option value="Uberlândia">Uberlândia</option>
+                                        <option value="Contagem">Contagem</option>
                                     </select>
                                 </div>
                             </div>
-
-                        </div> 
-                        <div class="opcao-foto" id="opcao-foto" style="display: none;">
-                            <input type="file" id="inputfile" style="display: none;" accept="image/*">
-                            <button type="button" id="botaofile"><iconify-icon icon="solar:gallery-send-broken"></iconify-icon>Selecione a Foto</button><!--! Colocar funcionalidade ao botão -->
-                            <p><span>Atenção!!!</span> Imagem <span>.JPG OU .PNG</span> de no mínimo 150x150px</p>
-                            <img id="preview" style="display: none; max-width: 500px; max-height: 500px;">
                         </div>
                         <div class="opcao-extra" id="opcao-extra" style="display: none;">
 
-                            <label for="">Situação de chegada</label>
-                            <textarea cols="30" rows="10"></textarea>
                             <label for="">Marcações</label>
                             <textarea cols="30" rows="10"></textarea>
-                            <p>* Cuidados especificos, alimentação, doença, medicações, tratamentos, etc.</p>
+                            <label for="">Observações</label>
+                            <textarea cols="30" rows="10"></textarea>
+                            <p>Sugestões: Alergias, preferência de afazeres. aptidões, dias disponíveis para ajudar,
+                                etc.</p>
                         </div>
                         <div class="confirm">
                             <button type="button" class="confirmar" onclick="adicionarItem2()">Salvar</button>
-                            <a href="buttons.html"><button type="button" class="cancelar">Cancelar</button></a>
+                            <a href="cards.html"><button type="button" class="cancelar">Cancelar</button></a>
                         </div>
                     </div>
+
+
+
                 </div>
                 <!-- /.container-fluid -->
-
+                
             </div>
             <div>
                 <table class="myTable" id="tabela">
@@ -524,7 +642,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; WireLock 2020</span>
+                        <span>Copyright &copy; WireLock 2023</span>
                     </div>
                 </div>
             </footer>
@@ -576,8 +694,8 @@
     <script src="js/options.js"></script>
     <!-- VALIDAÇÃO -->
     <script src="js/validaocao.js"></script>
-    <!-- TABELA -->
-    <script src="js/tabelaanimal.js"></script>
+    <!-- ADICIONAR TABELA -->
+    <script src="js/tabela.js"></script>
 </body>
 
 </html>

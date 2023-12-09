@@ -28,6 +28,9 @@ html {
 body{
   background: var(--cor-fundo);
   color:var(--cor-texto);
+  
+  background-image: linear-gradient(to bottom, #a4b390, #2c2c2c); /* Gradiente de cima para baixo */
+  color: var(--cor-texto);
 }
 /* Inicio Menu */
 .header{
@@ -152,67 +155,65 @@ body{
   margin: 50px 0 50px 0;
   font-weight: 600;
   font-size: 25px;
+  color: white;
 }
-.adotar{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.adoption-section {
-  padding: 10px;
-  text-align: center;
+.adotar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px;
+  padding: 20px;
+  margin-bottom: 300px;
 }
 
-.adoption-section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+.adoption-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .animal-card {
-  width: 300px;
-  height: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 230px;
+  border: 1px solid #bbbbbb;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #bbbbbb;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Adiciona transição suave para cor de fundo e transformação */
+}
 
+.animal-card:hover {
+  background-color: var(--cor-principal);
+  border: 1px solid var(--cor-principal);
 }
 
 .animal-card img {
   width: 100%;
-  max-height: 200px;
+  height: 140px;
   object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 10px;
- 
+  border-radius: 5px 5px 0px 0px;
+  transition: transform 0.3s ease; /*transição de zoom*/
 }
 
-.animal-card h3 {
-  font-size: 24px;
-  margin-bottom: 5px;
-
+.animal-card:hover img {
+  transform: scale(1.1); /*zoom na imagem*/
 }
 
+.animal-card h3,
 .animal-card p {
-  font-size: 16px;
-  margin-bottom: 10px;
+  margin: 5px 0;
 }
 
 .animal-card .adoption-button {
-  display: inline-block;
-  background-color: #ff8000;
-  color: #fff;
+  color: #000000;
   text-decoration: none;
-  padding: 10px 20px;
   border-radius: 5px;
-  font-weight: bold;
 }
 
-.imagem{
-  width: 200px;
-  height: auto;
-}
 .fundo{
   display: flex;
   align-items: center;

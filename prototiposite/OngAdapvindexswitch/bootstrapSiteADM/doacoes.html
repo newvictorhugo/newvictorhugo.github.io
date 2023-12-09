@@ -322,7 +322,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Cadastrar Voluntários</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Cadastrar Doações</h1>
                     <!--! Colocar filtragem, completar com as informações cada input e select, implementar funcionalidade de salvar. -->
                     <div class="div-principal">
                         <div class="subtitulo-nome">
@@ -335,14 +335,15 @@
 
                         <div class="opcoes-de-cadastro">
                             <button type="button" id="botao-geral" class="ativo">Geral</button>
-                            <button type="button" id="botao-foto" class="">Endereço</button>
+                            <button type="button" id="botao-foto" class="" style="display: none;">Endereço</button>
                             <button type="button" id="botao-extra" class="">Extra</button>
                         </div>
-                        <div class="opcao-geral" id="opcao-geral">
+                        <div class="opcao-geral" id="opcao-geral" style="display: block;">
                             <div class="quebra-volun-nomes">
                                 <div class="opcao-geral-divs">
                                     <label for="">Tipo(Pessoa física/Jurídica)<span>*</span> </label>
                                     <select name="tipopessoa" id="tipopessoa">
+                                        <option value="selecione">Selecione...</option>
                                         <option value="Pessoa Fisica">Pessoa Física</option>
                                         <option value="Pessoa Juridica">Pessoa Jurídica</option>
                                     </select>
@@ -350,25 +351,18 @@
                                 <div class="opcao-geral-nomes">
                                     <label for="">Nome Completo<span>*</span></label>
                                     <input type="text" id="nome" class="nomecompleto"
-                                        placeholder="Digite o nome do voluntário">
+                                        placeholder="Digite o nome do doador">
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
                                 <div class="opcao-geral-docs">
-                                    <label for="">CPF<span>*</span></label>
+                                    <label for="">CPF</label>
                                     <input type="text" id="campoCPF" placeholder="000.000.000-00" onkeyup="mCpf(this)"
                                         maxlength="14" onblur="validarCPF(this)" />
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">RG</label>
                                     <input type="text" id="campoRG" placeholder="00.000.000-0" maxlength="12" onkeyup="vRG(this)">
-                                </div>
-                            </div>
-                            <div class="quebra-volun-detail">
-                                <div class="opcao-geral-divs">
-                                    <label for="">Nascimento<span>*</span></label>
-                                    <input type="text" id="datanascimento" placeholder="dd/mm/aaaa" maxlength="10"
-                                        onkeyup="vData(this)">
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Nacionalidade<span>*</span></label>
@@ -377,17 +371,120 @@
                                         <option value="Estrangeiro">Estrangeiro</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="quebra-volun-detail">
                                 <div class="opcao-geral-divs">
-                                    <label for="">Gênero</label>
-                                    <select name="genero" id="genero">
+                                    <label for="">O que foi doado?<span></span></label>
+                                    <select name="doado" id="doado">
                                         <option value="selecione">Selecione...</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Feminino">Feminino</option>
-                                        <option value="Indefinido">Não definido</option>
+                                        <option value="dinheiro">Dinheiro</option>
+                                        <option value="racao">Ração</option>
+                                        <option value="remedio">Remédio</option>
                                     </select>
                                 </div>
                             </div>
-                            <h6 class="titulocontato">Contatos<span>*</span></h6>
+                            <div class="quebra-volun-display dinheiro" style="display: none;">
+                                <div class="quebra-volun-dinheiro">
+                                    <div class="opcao-geral-divs">
+                                        <label for="">Forma de doação</label>
+                                        <select name="formadedoacao" id="formadedoacao">
+                                            <option value="selecione">Selecione...</option>
+                                            <option value="cedula">Dinheiro</option>
+                                            <option value="pix">Pix</option>
+                                            <option value="cartao">Cartão</option>
+                                        </select>
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label for="">Valor doado</label>
+                                        <input type="text" placeholder="R$00.000,00">
+                                    </div>
+                                </div>
+                                <div class="quebra-volun-dinheiro-opcao">
+                                    <div class="opcao-geral-divs">
+                                        <label for="">Nome da instituição bancária</label>
+                                        <input type="text" placeholder="Nome do banco">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label for="">ID/Transação</label>
+                                        <input type="text" placeholder="ID da transação">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quebra-volun-display racao" style="display: none;">
+                                <div class="quebra-volun-racao">
+                                    <div class="opcao-geral-divs">
+                                        <label for="">Marca de ração</label>
+                                        <input type="text" placeholder="Digite o nome da marca">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label for="">Data de validade</label>
+                                        <input type="text" placeholder="00/00/0000">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label for="">Peso?</label>
+                                        <input type="text" placeholder="KG">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quebra-volun-display remedio" style="display: none;">
+                                <div class="quebra-volun-racao">
+                                    <div class="opcao-geral-divs">
+                                        <label>Nome do Medicamento</label>
+                                        <input type="text" placeholder="Digite o nome do medicamento">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label>Tipo de Medicamento</label>
+                                        <input type="text" placeholder="Ex: Antibiótico, Anti-inflamatório">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label>Forma Farmacêutica</label>
+                                        <input type="text" placeholder="Ex: Comprimido, Líquido, Injetável">
+                                    </div>
+                                </div>
+                                <div class="quebra-volun-racao">
+                                    <div class="opcao-geral-divs">
+                                        <label>Dosagem</label>
+                                        <input type="text" placeholder="Ex: 100mg, 50mL">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label>Data de Validade</label>
+                                        <input type="text" placeholder="DD/MM/AAAA">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label>Instruções de Uso</label>
+                                        <input type="text" placeholder="Instruções de administração">
+                                    </div>
+                                </div>
+                                <div class="quebra-volun-racao">
+                                    <div class="opcao-geral-divs">
+                                        <label>Finalidade de Uso</label>
+                                        <input type="text" placeholder="Finalidade do medicamento">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label>Número do Lote</label>
+                                        <input type="text" placeholder="Número do lote">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label>Fabricante</label>
+                                        <input type="text" placeholder="Nome do fabricante">
+                                    </div>
+                                </div>
+                                <div class="quebra-volun-racao">
+                                    <div class="opcao-geral-divs">
+                                        <label>Data de Recebimento</label>
+                                        <input type="text" placeholder="DD/MM/AAAA">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label>Quantidade Recebida</label>
+                                        <input type="text" placeholder="Quantidade recebida">
+                                    </div>
+                                    <div class="opcao-geral-divs">
+                                        <label>Armazenamento</label>
+                                        <input type="text" placeholder="Condições de armazenamento">
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="titulocontato">Contatos</h6>
                             <div class="quebra-volun-contato">
                                 <div class="celular">
                                     <div class="opcao-geral-divs">

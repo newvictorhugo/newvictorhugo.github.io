@@ -7,12 +7,28 @@ function camposValidos() {
 
     if (!vNome) {
         alert("Por favor, preencha o campo Nome.");
+        document.getElementById("nome").style.border="2px solid red";
         return false;
+    }else{
+        document.getElementById("nome").style.border="1px solid black";
     }
 
-    if (vSexo === "Selecione..." || vEspecie === "Selecione...") {
+    if (vSexo === "selecione" || vEspecie === "selecione") {
         alert("Por favor, selecione uma opção válida para Sexo e Espécie.");
+        if(vSexo === "selecione"){
+            document.getElementById("sexo").style.border="2px solid red";
+        }else{
+            document.getElementById("sexo").style.border="1px solid black";
+        }
+        if(vEspecie === "selecione"){
+            document.getElementById("especie").style.border="2px solid red";
+        }else{
+            document.getElementById("especie").style.border="1px solid black";
+        }
         return false;
+    }else{
+        document.getElementById("especie").style.border="1px solid black";
+        document.getElementById("sexo").style.border="1px solid black";
     }
 
     return true;

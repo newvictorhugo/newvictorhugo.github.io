@@ -160,3 +160,104 @@ function vCampos() {
     }
     return true;
 }
+function mascara(m,t,e){
+    var cursor = t.selectionStart;
+    var texto = t.value;
+    texto = texto.replace(/\D/g,'');
+    var l = texto.length;
+    var lm = m.length;
+    if(window.event) {                  
+       id = e.keyCode;
+    } else if(e.which){                 
+       id = e.which;
+    }
+    cursorfixo=false;
+    if(cursor < l)cursorfixo=true;
+    var livre = false;
+    if(id == 16 || id == 19 || (id >= 33 && id <= 40))livre = true;
+    ii=0;
+    mm=0;
+    if(!livre){
+       if(id!=8){
+          t.value="";
+          j=0;
+          for(i=0;i<lm;i++){
+             if(m.substr(i,1)=="#"){
+                t.value+=texto.substr(j,1);
+                j++;
+             }else if(m.substr(i,1)!="#"){
+                      t.value+=m.substr(i,1);
+                    }
+                    if(id!=8 && !cursorfixo)cursor++;
+                    if((j)==l+1)break;
+                        
+          } 	
+       }
+    }
+    if(cursorfixo && !livre)cursor--;
+      t.setSelectionRange(cursor, cursor);
+  }
+  function validarCNPJ() {
+    var cnpj = event.target.value;
+    var ok = true;
+
+    cnpj = cnpj.replace(/[^\d]+/g, '');
+
+    if (cnpj == '' || cnpj.length != 14) {
+        ok = false;
+    }
+
+    var cnpjInvalidos = [
+        "00000000000000", "11111111111111", "22222222222222",
+        "33333333333333", "44444444444444", "55555555555555",
+        "66666666666666", "77777777777777", "88888888888888",
+        "99999999999999"
+    ];
+
+    if (cnpjInvalidos.includes(cnpj)) {
+        ok = false;
+    }
+
+    if (ok) {
+        var tamanho = cnpj.length - 2
+        var numeros = cnpj.substring(0, tamanho);
+        var digitos = cnpj.substring(tamanho);
+        var soma = 0;
+        var pos = tamanho - 7;
+
+        for (i = tamanho; i >= 1; i--) {
+            soma += numeros.charAt(tamanho - i) * pos--;
+            if (pos < 2)
+                pos = 9;
+        }
+
+        var resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+        if (resultado != digitos.charAt(0)) {
+            ok = false;
+        }
+
+        if (ok) {
+            tamanho = tamanho + 1;
+            numeros = cnpj.substring(0, tamanho);
+            soma = 0;
+            pos = tamanho - 7;
+            for (i = tamanho; i >= 1; i--) {
+                soma += numeros.charAt(tamanho - i) * pos--;
+                if (pos < 2)
+                    pos = 9;
+            }
+
+            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+            if (resultado != digitos.charAt(1)) {
+                ok = false;
+            }
+        }
+    }
+
+    if (!ok) {
+        alert("Ops... Ocorreu um problema... CNPJ inválido!");
+        document.getElementById("CNPJ").style.border="2px solid red";
+    }else{
+        document.getElementById("CNPJ").style.border="1px solid black";
+    }
+}
