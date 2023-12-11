@@ -127,7 +127,7 @@ body{
 .topo{
     display: flex;
     align-items: center;
-    background: url(/OngAdapvindexswitch/imagens/retrato-de-um-cao-labrador-preto-tomado-contra-um-fundo-escuro.jpg);
+    background: url(/prototiposite/OngAdapvindexswitch/imagens/retrato-de-um-cao-labrador-preto-tomado-contra-um-fundo-escuro.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -175,7 +175,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(/OngAdapvindexswitch/imagens/voluntariado.png);
+  background-image: url(/prototiposite/OngAdapvindexswitch/imagens/voluntariado.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -581,7 +581,7 @@ border: solid 1px #FE544B;
 
 /* line 1, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
 .video_bg_1 {
-  background-image: url(/OngAdapvindexswitch/imagens/foto-todos-com-racao.png);
+  background-image: url(/prototiposite/OngAdapvindexswitch/imagens/foto-todos-com-racao.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

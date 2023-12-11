@@ -12,15 +12,16 @@
     <title>GuiaPet - Cadastrar Voluntários</title>
 
     <!-- Custom fonts for this template-->
-    <link href="/OngAdapvindexswitch/bootstrapSiteADM/vendor/fontawesome-free/css/all.min.css"
+    <link href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/vendor/fontawesome-free/css/all.min.css"
         rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/OngAdapvindexswitch/bootstrapSiteADM/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -44,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active alinharlogos">
-                <a href="/OngAdapvindexswitch/index.html">
+                <a href="/prototiposite/OngAdapvindexswitch/index.html">
                     <img src="img/CatDogScPngOficialPretoeBranco.png" alt="logotipo" class="imglogo">
                     <span class="nomelogo">ADAPV</span>
                 </a>
@@ -90,12 +91,13 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <h6 class="collapse-header">Opções: </h6>
                         <a class="collapse-item" href="buttons.html">Animais</a>
                         <a class="collapse-item" href="cards.html">Voluntários</a>
-                        <a class="collapse-item" href="cards.html">Projetos</a>
-                        <a class="collapse-item" href="cards.html">Empresas</a>
-                        <a class="collapse-item" href="cards.html">Adoções</a>
+                        <a class="collapse-item" href="projetos.html">Projetos</a>
+                        <a class="collapse-item" href="empresa.html">Empresas</a>
+                        <a class="collapse-item" href="adocoes.html">Adoções</a>
+                        <a class="collapse-item" href="doacoes.html">Doações</a>
                     </div>
                 </div>
             </li>
@@ -322,7 +324,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Cadastrar Voluntários</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Cadastrar Projetos</h1>
                     <!--! Colocar filtragem, completar com as informações cada input e select, implementar funcionalidade de salvar. -->
                     <div class="div-principal">
                         <div class="subtitulo-nome">
@@ -335,144 +337,44 @@
 
                         <div class="opcoes-de-cadastro">
                             <button type="button" id="botao-geral" class="ativo">Geral</button>
-                            <button type="button" id="botao-foto" class="">Endereço</button>
-                            <button type="button" id="botao-extra" class="">Extra</button>
+                            <button type="button" id="botao-foto" class="" style="display: none;">Endereço</button>
+                            <button type="button" id="botao-extra" class="" style="display: none;">Extra</button>
                         </div>
                         <div class="opcao-geral" id="opcao-geral">
                             <div class="quebra-volun-nomes">
                                 <div class="opcao-geral-nomes">
-                                    <label for="">Nome Completo<span>*</span></label>
-                                    <input type="text" id="nome" class="nomecompleto"
-                                        placeholder="Digite o nome do voluntário">
+                                    <label for="">Nome do Voluntário<span>*</span></label>
+                                    <select id="tags" multiple="multiple" style="width: 100%;">
+                                        <option value="Gabriel">Gabriel</option>
+                                        <option value="Gabriela">Gabriela</option>
+                                        <option value="João">João</option>
+                                        <option value="Maria">Maria</option>
+                                        <!-- Adicione outras opções conforme necessário -->
+                                      </select>
+                                </div>
+                                <div class="opcao-geral-nomes">
+                                    <label for="">Nome da Empresa<span>*</span></label>
+                                    <select id="empresa" multiple="multiple" style="width: 100%;">
+                                        <option value="Gabriel">Gabriel</option>
+                                        <option value="Gabriela">Gabriela</option>
+                                        <option value="João">João</option>
+                                        <option value="Maria">Maria</option>
+                                        <!-- Adicione outras opções conforme necessário -->
+                                      </select>
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
                                 <div class="opcao-geral-docs">
-                                    <label for="">CPF<span>*</span></label>
-                                    <input type="text" id="campoCPF" placeholder="000.000.000-00" onkeyup="mCpf(this)"
-                                        maxlength="14" onblur="validarCPF(this)" />
-                                </div>
-                                <div class="opcao-geral-docs">
-                                    <label for="">RG</label>
-                                    <input type="text" id="campoRG" placeholder="00.000.000-0" maxlength="12" onkeyup="vRG(this)">
+                                    <label for="">Nome do Projeto<span>*</span></label>
+                                    <input type="text" id="nome" placeholder="Digite o nome do projeto"/>
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
-                                <div class="opcao-geral-divs">
-                                    <label for="">Nascimento<span>*</span></label>
-                                    <input type="text" id="datanascimento" placeholder="dd/mm/aaaa" maxlength="10"
-                                        onkeyup="vData(this)">
-                                </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Nacionalidade<span>*</span></label>
-                                    <select name="nacionalidade" id="nacionalidade">
-                                        <option value="Brasileiro">Brasileiro</option>
-                                        <option value="Estrangeiro">Estrangeiro</option>
-                                    </select>
-                                </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Gênero</label>
-                                    <select name="genero" id="genero">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Feminino">Feminino</option>
-                                        <option value="Indefinido">Não definido</option>
-                                    </select>
+                                <div class="opcao-geral-docs">
+                                    <label for="">Descrição<span>*</span></label>
+                                    <textarea cols="50" rows="10"></textarea>
                                 </div>
                             </div>
-                            <h6 class="titulocontato">Contatos<span>*</span></h6>
-                            <div class="quebra-volun-contato">
-                                <div class="celular">
-                                    <div class="opcao-geral-divs">
-                                        <select name="contatos" id="contatos" onchange="selecionarOpcao(this.value)">
-                                            <option value="celular">Celular</option>
-                                            <option value="email">Email</option>
-                                            <option value="residencial">Residencial</option>
-                                        </select>
-                                    </div>
-                                    <div class="opcao-geral-divss">
-                                        <input type="text" id="campoCel" placeholder="(00)00000-0000" maxlength="14"
-                                            onkeyup="mTel(this)">
-                                    </div>
-                                    <div class="opcao-geral-divs">
-                                        <select name="wpp" id="wpp">
-                                            <option value="numewpp">Este número é WhatsApp?</option>
-                                            <option value="sim">Sim</option>
-                                            <option value="nao">Não</option>
-                                        </select>
-                                    </div>
-                                    <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Observações">
-                                    </div>
-                                    <div class="botoes">
-                                        <div class="favorito">
-                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon
-                                                    id="favorito-icon" icon="bi:star"></iconify-icon></button>
-                                        </div>
-                                        <div class="excluir">
-                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
-                                                    icon="tabler:trash"></iconify-icon></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="quebra-volun-contato">
-                                <div class="email">
-                                    <div class="opcao-geral-divs">
-                                        <select name="contatos" id="contatos" onchange="selecionarOpcao(this.value)">
-                                            <option value="email">Email</option>
-                                            <option value="celular">Celular</option>
-                                            <option value="residencial">Residencial</option>
-                                        </select>
-                                    </div>
-                                    <div class="opcao-geral-divs">
-                                        <input type="text" id="campoEmail" class="textEmail" placeholder="Digite seu email"
-                                            onblur="vEmail(this)">
-                                    </div>
-                                    <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Observações">
-                                    </div>
-                                    <div class="botoes">
-                                        <div class="favorito">
-                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon
-                                                    id="favorito-icon" icon="bi:star"></iconify-icon></button>
-                                        </div>
-                                        <div class="excluir">
-                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
-                                                    icon="tabler:trash"></iconify-icon></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="quebra-volun-contato">
-                                <div class="residencial">
-                                    <div class="opcao-geral-divs">
-                                        <select name="contatos" id="contatos" onchange="selecionarOpcao(this.value)">
-                                            <option value="residencial">Residencial</option>
-                                            <option value="celular">Celular</option>
-                                            <option value="email">Email</option>
-                                        </select>
-                                    </div>
-                                    <div class="opcao-geral-divs">
-                                        <input type="text" id="campoTel" placeholder="(00)0000-0000" maxlength="13"
-                                            onkeyup="mTel(this)">
-                                    </div>
-                                    <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Observações">
-                                    </div>
-                                    <div class="botoes">
-                                        <div class="favorito">
-                                            <button onclick="botaoFavorito(this)" id="favorito-button"><iconify-icon
-                                                    id="favorito-icon" icon="bi:star"></iconify-icon></button>
-                                        </div>
-                                        <div class="excluir">
-                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
-                                                    icon="tabler:trash"></iconify-icon></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                         <div class="opcao-foto opcao-geral" id="opcao-foto" style="display: none;">
                             <div class="quebra-volun-nomes">
@@ -724,6 +626,9 @@
     <script src="js/validaocao.js"></script>
     <!-- ADICIONAR TABELA -->
     <script src="js/tabela.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>\
+    <script src="js/multiselect.js"></script>
 </body>
 
 </html>
