@@ -21,6 +21,8 @@
     <!-- Custom styles for this template-->
     <link href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body id="page-top">
@@ -91,12 +93,12 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opções: </h6>
-                        <a class="collapse-item" href="buttons.html">Animais</a>
-                        <a class="collapse-item" href="cards.html">Voluntários</a>
-                        <a class="collapse-item" href="projetos.html">Projetos</a>
-                        <a class="collapse-item" href="empresa.html">Empresas</a>
-                        <a class="collapse-item" href="adocoes.html">Adoções</a>
-                        <a class="collapse-item" href="doacoes.html">Doações</a>
+                        <a class="collapse-item" href="listaranimais.html">Lista Animais</a>
+                        <a class="collapse-item" href="listarvoluntarios.html">Lista Voluntários</a>
+                        <a class="collapse-item" href="listarprojetos.html">Lista Projetos</a>
+                        <a class="collapse-item" href="listarempresas.html">Lista Empresas</a>
+                        <a class="collapse-item" href="listaradocoes.html">Lista Adoções</a>
+                        <a class="collapse-item" href="listardoacoes.html">Lista Doações</a>
                     </div>
                 </div>
             </li>
@@ -341,27 +343,30 @@
                         </div>
                         <div class="opcao-geral" id="opcao-geral">
                             <div class="quebra-volun-nomes">
-                                <div class="opcao-geral-divs">
-                                    <label for="">Tipo(Pessoa física/Jurídica)<span>*</span> </label>
-                                    <select name="tipopessoa" id="tipopessoa">
-                                        <option value="Pessoa Fisica">Pessoa Física</option>
-                                        <option value="Pessoa Juridica">Pessoa Jurídica</option>
-                                    </select>
+                                <div class="opcao-geral-nomes">
+                                    <label for="">Nome do adotante<span>*</span></label>
+                                    <input type="text" id="nome" class="nomecompleto" placeholder="Digite o nome do voluntário">
                                 </div>
                                 <div class="opcao-geral-nomes">
-                                    <label for="">Nome Completo<span>*</span></label>
-                                    <input type="text" id="nome" class="nomecompleto"
-                                        placeholder="Digite o nome do voluntário">
+                                    <label for="">Nome do animal<span>*</span></label>
+                                    <select id="selectanimais" multiple="multiple" style="width: 100%;">
+                                        <option value="Gabriel">Gabriel</option>
+                                        <option value="Gabriela">Gabriela</option>
+                                        <option value="João">João</option>
+                                        <option value="Maria">Maria</option>
+                                        <option value="Melyna">Melyna</option>
+                                        <!-- Adicione outras opções conforme necessário -->
+                                      </select>
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
                                 <div class="opcao-geral-docs">
                                     <label for="">CPF<span>*</span></label>
                                     <input type="text" id="campoCPF" placeholder="000.000.000-00" onkeyup="mCpf(this)"
-                                        maxlength="14" onblur="validarCPF(this)" />
+                                        maxlength="14" onblur="validarCPF(this)" /> 
                                 </div>
                                 <div class="opcao-geral-docs">
-                                    <label for="">RG</label>
+                                    <label for="">RG<span>*</span></label>
                                     <input type="text" id="campoRG" placeholder="00.000.000-0" maxlength="12" onkeyup="vRG(this)">
                                 </div>
                             </div>
@@ -652,8 +657,7 @@
                             <textarea cols="30" rows="10"></textarea>
                             <label for="">Observações</label>
                             <textarea cols="30" rows="10"></textarea>
-                            <p>Sugestões: Alergias, preferência de afazeres. aptidões, dias disponíveis para ajudar,
-                                etc.</p>
+                            <p>Sugestões: Comprometimento com cuidados adequados, consideração financeira, tempo para interação e treinamento, preparação do ambiente, pesquisa sobre necessidades do animal e disposição para um período de adaptação, etc.</p>
                         </div>
                         <div class="confirm">
                             <button type="button" class="confirmar" onclick="adicionarItem2()">Salvar</button>
@@ -732,6 +736,9 @@
     <script src="js/validaocao.js"></script>
     <!-- ADICIONAR TABELA -->
     <script src="js/tabela.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>\
+    <script src="js/multiselect.js"></script>
 </body>
 
 </html>

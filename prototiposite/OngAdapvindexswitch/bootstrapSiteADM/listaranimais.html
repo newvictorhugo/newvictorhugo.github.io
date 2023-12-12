@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
 
@@ -9,17 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GuiaPet - Cadastrar Animais</title>
+    <title>SB Admin 2 - Tables</title>
 
-    <!-- Custom fonts for this template-->
-    <link href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/vendor/fontawesome-free/css/all.min.css"
-        rel="stylesheet" type="text/css">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -49,7 +51,6 @@
                     <span class="nomelogo">ADAPV</span>
                 </a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -102,8 +103,6 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -126,9 +125,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
                     <form
@@ -238,7 +239,8 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                            alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -249,7 +251,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                            alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -260,7 +263,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                            alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -292,7 +296,8 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -326,207 +331,182 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Cadastrar Animal</h1>
-                    <!--! Colocar filtragem, completar com as informações cada input e select, implementar funcionalidade de salvar. -->
-                    <div class="div-principal">
-                        <div class="subtitulo-nome">
-                            <h5><b>Nome</b></h5>
-                            <a href="index.html">
-                                <button type="button"><iconify-icon icon="mingcute:arrow-up-fill"
-                                        rotate="270deg"></iconify-icon>Voltar</button>
-                            </a>
-                        </div>
+                    <h1 class="h3 mb-2 text-gray-800">Lista de Animais</h1>
+                    <p class="mb-4">Todos os animais cadastrados são ou foram residentes da <strong>ONG ADAPV</strong>.</p>
 
-                        <div class="opcoes-de-cadastro">
-                            <button type="button" id="botao-geral" class="ativo">Geral</button>
-                            <button type="button" id="botao-foto" class="">Foto</button>
-                            <button type="button" id="botao-extra" class="">Extra</button>
-                        </div>
-                        <div class="opcao-geral" id="opcao-geral">
-                            <div class="quebra">
-                                <div class="opcao-geral-divs">
-                                    <label for="">Nome<span>*</span></label>
-                                    <input type="text" id="nome" placeholder="Digite o nome do animal">
-                                </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Sexo<span>*</span></label>
-                                    <select name="sexo" id="sexo">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="Macho">Macho</option>
-                                        <option value="Femea">Fêmea</option>
-                                        <option value="Indefinido">Indefinido</option>
-                                    </select>
-                                </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Esterilização</label>
-                                    <select name="ester" id="ester">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="Fertil">Fertil</option>
-                                        <option value="Castrado">Castrado</option>
-                                        <option value="Vasectomia">Vasectomia</option>
-                                    </select>
-                                </div>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Nascimento</th>
+                                            <th>Raça</th>
+                                            <th>Sexo</th>
+                                            <th>Espécie</th>
+                                            <th>Pelagem</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Nascimento</th>
+                                            <th>Raça</th>
+                                            <th>Sexo</th>
+                                            <th>Espécie</th>
+                                            <th>Pelagem</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Ariel</td>
+                                            <td>21/12/2017</td>
+                                            <td>Shitzu</td>
+                                            <td>Fêmea</td>
+                                            <td>Canino</td>
+                                            <td>Branco e preto</td>
+                                            <td>Hab. na ONG</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Amora</td>
+                                            <td>27/05/2018</td>
+                                            <td>Lhasa</td>
+                                            <td>Fêmea</td>
+                                            <td>Canino</td>
+                                            <td>Branco e marrom</td>
+                                            <td>Hab. na ONG</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Riley</td>
+                                            <td>10/10/2019</td>
+                                            <td>Pastor Alemão</td>
+                                            <td>Macho</td>
+                                            <td>Canino</td>
+                                            <td>Castanho e preto</td>
+                                            <td>Doado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Totó</td>
+                                            <td>20/02/2018</td>
+                                            <td>Vira-lata</td>
+                                            <td>Macho</td>
+                                            <td>Canino</td>
+                                            <td>Preto e castanho</td>
+                                            <td>Hab. na ONG</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sturch</td>
+                                            <td>03/11/2020</td>
+                                            <td>Vira-lata</td>
+                                            <td>Macho</td>
+                                            <td>Canino</td>
+                                            <td>Caramelo</td>
+                                            <td>Doado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Buddy</td>
+                                            <td>15/08/2019</td>
+                                            <td>Labrador Retriever</td>
+                                            <td>Macho</td>
+                                            <td>Canino</td>
+                                            <td>Amarelo</td>
+                                            <td>Hab. na ONG</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Luna</td>
+                                            <td>03/04/2018</td>
+                                            <td>Husky Siberiano</td>
+                                            <td>Fêmea</td>
+                                            <td>Canino</td>
+                                            <td>Branco e Cinza</td>
+                                            <td>Doado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rex</td>
+                                            <td>22/11/2020</td>
+                                            <td>Golden Retriever</td>
+                                            <td>Macho</td>
+                                            <td>Canino</td>
+                                            <td>Dourado</td>
+                                            <td>Doado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sophie</td>
+                                            <td>10/06/2017</td>
+                                            <td>Bulldog Francês</td>
+                                            <td>Fêmea</td>
+                                            <td>Canino</td>
+                                            <td>Tigrado</td>
+                                            <td>Hab. na ONG</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Max</td>
+                                            <td>09/01/2020</td>
+                                            <td>Rottweiler</td>
+                                            <td>Macho</td>
+                                            <td>Canino</td>
+                                            <td>Preto e Marrom</td>
+                                            <td>Doado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bella</td>
+                                            <td>30/07/2018</td>
+                                            <td>Boxer</td>
+                                            <td>Fêmea</td>
+                                            <td>Canino</td>
+                                            <td>Tigrado</td>
+                                            <td>Hab. na ONG</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Coco</td>
+                                            <td>14/02/2019</td>
+                                            <td>Doberman</td>
+                                            <td>Fêmea</td>
+                                            <td>Canino</td>
+                                            <td>Preto</td>
+                                            <td>Doado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jake</td>
+                                            <td>18/09/2021</td>
+                                            <td>Border Collie</td>
+                                            <td>Macho</td>
+                                            <td>Canino</td>
+                                            <td>Preto e Branco</td>
+                                            <td>Hab. na ONG</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lola</td>
+                                            <td>25/03/2020</td>
+                                            <td>Dálmata</td>
+                                            <td>Fêmea</td>
+                                            <td>Canino</td>
+                                            <td>Branco com Manchas Pretas</td>
+                                            <td>Hab. na ONG</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rusty</td>
+                                            <td>07/11/2017</td>
+                                            <td>Vira-lata</td>
+                                            <td>Macho</td>
+                                            <td>Canino</td>
+                                            <td>Marrom</td>
+                                            <td>Solto</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="quebra">
-                                <div class="opcao-geral-divs">
-                                    <label for="">Nascimento</label>
-                                    <input type="text" id="campoData" maxlength="10" placeholder="dd/mm/aaaa"
-                                        onkeyup="vData(this)">
-                                </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Espécie<span>*</span></label>
-                                    <select name="especie" id="especie">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="Canino">Canino</option>
-                                        <option value="Felino">Felino</option>
-                                        <option value="Outros">Outros</option>
-                                    </select>
-                                </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Estado<span>*</span></label>
-                                    <select name="estado" id="estado">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="HabitandonaONG">Habitando na ONG</option>
-                                        <option value="Solto">Solto</option>
-                                        <option value="Adotado">Adotado</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="quebra">
-                                <div class="opcao-geral-divs">
-                                    <label for="">Raça</label>
-                                    <select name="raca" id="raca">
-                                        <option value="Selecione...">Selecione...</option>
-                                        <option value="Labrador Retriever">Labrador Retriever</option>
-                                        <option value="Golden Retriever">Golden Retriever</option>
-                                        <option value="Beagle">Beagle</option>
-                                        <option value="Bulldog">Bulldog</option>
-                                        <option value="Poodle">Poodle</option>
-                                        <option value="Rottweiler">Rottweiler</option>
-                                        <option value="Yorkshire Terrier">Yorkshire Terrier</option>
-                                        <option value="Boxer">Boxer</option>
-                                        <option value="Dachshund">Dachshund</option>
-                                        <option value="Siberian Husky">Siberian Husky</option>
-                                        <option value="Doberman Pinscher">Doberman Pinscher</option>
-                                        <option value="Great Dane">Great Dane</option>
-                                        <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
-                                        <option value="Shih Tzu">Shih Tzu</option>
-                                        <option value="Boston Terrier">Boston Terrier</option>
-                                        <option value="Pomeranian">Pomeranian</option>
-                                        <option value="Chihuahua">Chihuahua</option>
-                                        <option value="German Shepherd">German Shepherd</option>
-                                        <option value="Australian Shepherd">Australian Shepherd</option>
-                                        <option value="Pug">Pug</option>
-                                        <option value="Border Collie">Border Collie</option>
-                                        <option value="Cocker Spaniel">Cocker Spaniel</option>
-                                        <option value="Shetland Sheepdog">Shetland Sheepdog</option>
-                                        <option value="French Bulldog">French Bulldog</option>
-                                        <option value="Maltese">Maltese</option>
-                                        <option value="Bull Terrier">Bull Terrier</option>
-                                        <option value="Basset Hound">Basset Hound</option>
-                                        <option value="American Staffordshire Terrier">American Staffordshire Terrier </option>
-                                        <option value="Shiba Inu">Shiba Inu</option>
-                                        <option value="Akita">Akita</option>
-                                        <option value="Bloodhound">Bloodhound</option>
-                                        <option value="Weimaraner">Weimaraner</option>
-                                        <option value="Bernese Mountain Dog">Bernese Mountain Dog</option>
-                                        <option value="Mastiff">Mastiff</option>
-                                        <option value="Saint Bernard">Saint Bernard</option>
-                                        <option value="Newfoundland">Newfoundland</option>
-                                        <option value="Samoyed">Samoyed</option>
-                                        <option value="Portuguese Water Dog">Portuguese Water Dog</option>
-                                        <option value="Irish Setter">Irish Setter</option>
-                                        <option value="Whippet">Whippet</option>
-
-                                        <option value="Yorkshire" style="color: red;">=====Gatos=====</option>
-
-                                        <option value="Maine Coon">Maine Coon</option>
-                                        <option value="Siamês">Siamês</option>
-                                        <option value="Persa">Persa</option>
-                                        <option value="Ragdoll">Ragdoll</option>
-                                        <option value="Bengal">Bengal</option>
-                                        <option value="Sphynx">Sphynx</option>
-                                        <option value="Abyssinian">Abyssinian</option>
-                                        <option value="British Shorthair">British Shorthair</option>
-                                        <option value="Burmese">Burmese</option>
-                                        <option value="Oriental Shorthair">Oriental Shorthair</option>
-                                        <option value="Scottish Fold">Scottish Fold</option>
-                                        <option value="Siamese">Siamese</option>
-                                        <option value="Siberian">Siberian</option>
-                                        <option value="Norwegian Forest Cat">Norwegian Forest Cat</option>
-                                        <option value="American Shorthair">American Shorthair</option>
-                                        <option value="Ragamuffin">Ragamuffin</option>
-                                        <option value="Devon Rex">Devon Rex</option>
-                                        <option value="Russian Blue">Russian Blue</option>
-                                        <option value="Egyptian Mau">Egyptian Mau</option>
-                                        <option value="Cornish Rex">Cornish Rex</option>
-                                        <option value="Tonkinese">Tonkinese</option>
-                                        <option value="Turkish Angora">Turkish Angora</option>
-                                        <option value="Manx">Manx</option>
-                                        <option value="Himalayan">Himalayan</option>
-                                        <option value="American Curl">American Curl</option>
-                                        <option value="Balinese">Balinese</option>
-                                        <option value="Bombay">Bombay</option>
-                                        <option value="Burmilla">Burmilla</option>
-                                        <option value="Chartreux">Chartreux</option>
-                                        <option value="Havana Brown">Havana Brown</option>
-                                        <option value="Japanese Bobtail">Japanese Bobtail</option>
-                                        <option value="Korat">Korat</option>
-                                        <option value="LaPerm">LaPerm</option>
-                                        <option value="Ocicat">Ocicat</option>
-                                        <option value="Somali">Somali</option>
-                                        <option value="Turkish Van">Turkish Van</option>
-                                        <option value="Exotic Shorthair">Exotic Shorthair</option>
-                                        <option value="Pixie-bob">Pixie-bob</option>
-
-                                    </select>
-                                </div>
-                                <div class="opcao-geral-divs">
-                                    <label for="">Pelagem</label>
-                                    <select name="pelagem" id="pelagem">
-                                        <option value="selecione">Selecione...</option>
-                                        <option value="Amarelo">Amarelo</option>
-                                        <option value="Preto c/ Branco">Preto c/ Branco</option>
-                                        <option value="Azul">Azul</option>
-                                        <option value="Branco">Branco</option>
-                                        <option value="Caramelo">Caramelo</option>
-                                        <option value="Preto c/ Branco">Preto c/ Branco</option>
-                                        <option value="Caramelo c/ Branco">Caramelo c/ Branco</option>
-                                        <option value="Cinza">Cinza</option>
-                                        <option value="Vermelho">Vermelho</option>
-                                        <option value="Marrom">Marrom</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                        </div> 
-                        <div class="opcao-foto" id="opcao-foto" style="display: none;">
-                            <input type="file" id="inputfile" style="display: none;" accept="image/*">
-                            <button type="button" id="botaofile"><iconify-icon icon="solar:gallery-send-broken"></iconify-icon>Selecione a Foto</button><!--! Colocar funcionalidade ao botão -->
-                            <p><span>Atenção!!!</span> Imagem <span>.JPG OU .PNG</span> de no mínimo 150x150px</p>
-                            <img id="preview" style="display: none; max-width: 500px; max-height: 500px;">
-                        </div>
-                        <div class="opcao-extra" id="opcao-extra" style="display: none;">
-
-                            <label for="">Situação de chegada</label>
-                            <textarea cols="30" rows="10"></textarea>
-                            <label for="">Marcações</label>
-                            <textarea cols="30" rows="10"></textarea>
-                            <p>* Cuidados especificos, alimentação, doença, medicações, tratamentos, etc.</p>
-                        </div>
-                        <div class="confirm">
-                            <button type="button" class="confirmar" onclick="adicionarItem2()">Salvar</button>
-                            <a href="buttons.html"><button type="button" class="cancelar">Cancelar</button></a>
                         </div>
                     </div>
+
                 </div>
                 <!-- /.container-fluid -->
 
-            </div>
-            <div>
-                <table class="myTable" id="tabela">
-
-                </table>
             </div>
             <!-- End of Main Content -->
 
@@ -534,7 +514,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; WireLock 2020</span>
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>
@@ -580,14 +560,14 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-    <!-- Script icon -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <!-- Register Change option -->
-    <script src="js/options.js"></script>
-    <!-- VALIDAÇÃO -->
-    <script src="js/validaocao.js"></script>
-    <!-- TABELA -->
-    <script src="js/tabelaanimal.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
 </body>
 
 </html>

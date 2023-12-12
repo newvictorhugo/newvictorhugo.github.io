@@ -27,3 +27,18 @@ $(document).ready(function() {
         console.log(selectedOptions);
     });
 });
+
+$(document).ready(function() {
+    $('#selectanimais').select2({
+        tags: true,
+        tokenSeparators: [','],
+        placeholder: 'Digite os nomes das pessoas...',
+        // Opções adicionais conforme necessário
+    });
+
+    $('#selectanimais').on('change', function() {
+        // Aqui você pode lidar com a alteração das opções selecionadas, se necessário
+        var selectedOptions = $(this).val();
+        console.log(selectedOptions);
+    });
+});
