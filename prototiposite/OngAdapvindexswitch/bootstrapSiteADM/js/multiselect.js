@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#tags').select2({
         tags: true,
         tokenSeparators: [','],
-        placeholder: 'Digite os nomes das pessoas...',
+        placeholder: 'Digite os nomes dos voluntário participantes',
         // Opções adicionais conforme necessário
     });
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
     $('#empresa').select2({
         tags: true,
         tokenSeparators: [','],
-        placeholder: 'Digite os nomes das pessoas...',
+        placeholder: 'Digite os nomes das empresas parceiras',
         // Opções adicionais conforme necessário
     });
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
     $('#selectanimais').select2({
         tags: true,
         tokenSeparators: [','],
-        placeholder: 'Digite os nomes das pessoas...',
+        placeholder: 'Digite os nomes dos animais',
         // Opções adicionais conforme necessário
     });
 
