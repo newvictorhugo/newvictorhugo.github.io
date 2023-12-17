@@ -357,7 +357,10 @@ body::after {
 .div-principal .confirm .cancelar:hover{
     background-color: rgb(172, 172, 172);
 }
-
+.mensagemErro {
+    color: red;
+    font-size: 12px;
+}
 .myTable{
     margin: 20px 0 0 25px;
     width: 96%;
