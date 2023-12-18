@@ -204,7 +204,7 @@ function atualizarTabelaAdocoes() {
                     <td>${adocao.genero}</td>
                     <td>${adocao.contato}</td>
                     <td>${endereco}</td>
-                 </tr>`;
+                </tr>`;
     }
 
     tab.innerHTML = html;

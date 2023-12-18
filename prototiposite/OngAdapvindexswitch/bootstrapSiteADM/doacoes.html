@@ -349,11 +349,13 @@
                                         <option value="Pessoa Fisica">Pessoa Física</option>
                                         <option value="Pessoa Juridica">Pessoa Jurídica</option>
                                     </select>
+                                    <p id="erroTipo" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-nomes">
                                     <label for="">Nome Completo<span>*</span></label>
                                     <input type="text" id="nome" class="nomecompleto"
                                         placeholder="Digite o nome do doador">
+                                    <p id="erroNome" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
@@ -361,10 +363,12 @@
                                     <label for="">CPF</label>
                                     <input type="text" id="campoCPF" placeholder="000.000.000-00" onkeyup="mCpf(this)"
                                         maxlength="14" onblur="validarCPF(this)" />
+                                    <p id="erroCPF" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">RG</label>
                                     <input type="text" id="campoRG" placeholder="00.000.000-0" maxlength="12" onkeyup="vRG(this)">
+                                    <p id="erroRG" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Nacionalidade<span>*</span></label>
@@ -372,12 +376,14 @@
                                         <option value="Brasileiro">Brasileiro</option>
                                         <option value="Estrangeiro">Estrangeiro</option>
                                     </select>
+                                    <p id="erroNacionalidade" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
                                 <div class="opcao-geral-divs">
                                     <label for="">Data da doação<span>*</span></label>
-                                    <input type="text" id="datanascimento" placeholder="dd/mm/aaaa" maxlength="10"onkeyup="vData(this)">
+                                    <input type="text" id="campoData" placeholder="dd/mm/aaaa" maxlength="10"onkeyup="vData(this)">
+                                    <p id="erroData" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">O que foi doado?<span>*</span></label>
@@ -387,6 +393,7 @@
                                         <option value="racao">Ração</option>
                                         <option value="remedio">Remédio</option>
                                     </select>
+                                    <p id="erroDoado" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-display dinheiro" style="display: none;">
@@ -402,7 +409,8 @@
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <label for="">Valor doado<span>*</span></label>
-                                        <input type="text" placeholder="R$00.000,00">
+                                        <input type="text" id="valordinheiro" placeholder="R$00.000,00">
+                                        <p id="erroValorDinheiro" class="mensagemErro"></p>
                                     </div>
                                 </div>
                                 <div class="quebra-volun-dinheiro-opcao">
@@ -420,7 +428,8 @@
                                 <div class="quebra-volun-racao">
                                     <div class="opcao-geral-divs">
                                         <label for="">Marca de ração<span>*</span></label>
-                                        <input type="text" placeholder="Digite o nome da marca">
+                                        <input type="text" id="marcaracao" placeholder="Digite o nome da marca">
+                                        <p id="erroMarcaRacao" class="mensagemErro"></p>
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <label for="">Data de validade<span>*</span></label>
@@ -428,7 +437,8 @@
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <label for="">Peso?<span>*</span></label>
-                                        <input type="text" placeholder="KG">
+                                        <input type="text" id="peso" placeholder="KG">
+                                        <p id="erroPesoRacao" class="mensagemErro"></p>
                                     </div>
                                 </div>
                             </div>
@@ -436,7 +446,8 @@
                                 <div class="quebra-volun-racao">
                                     <div class="opcao-geral-divs">
                                         <label>Nome do Medicamento<span>*</span></label>
-                                        <input type="text" placeholder="Digite o nome do medicamento">
+                                        <input type="text" id="nomeMed" placeholder="Digite o nome do medicamento">
+                                        <p id="erroNomeMed" class="mensagemErro"></p>
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <label>Tipo de Medicamento<span>*</span></label>
@@ -482,7 +493,8 @@
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <label>Quantidade Recebida<span>*</span></label>
-                                        <input type="text" placeholder="Quantidade recebida">
+                                        <input type="text" id="qntMed" placeholder="Quantidade recebida">
+                                        <p id="erroQuantidadeMed" class="mensagemErro"></p>
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <label>Armazenamento<span>*</span></label>
@@ -615,7 +627,7 @@
                                 <div class="opcao-geral-divs">
                                     <label for="">Cidade<span>*</span></label>
                                     <select name="City" id="Citys">
-                                        <option value="Selecione...">Selecione...</option>
+                                        <option value="selecione">Selecione...</option>
                                         <option value="Americana">Americana</option>
                                         <option value="Araraquara">Araraquara</option>
                                         <option value="Atibaia">Atibaia</option>
@@ -662,7 +674,7 @@
                                 <div class="opcao-geral-divs">
                                     <label for="">Estado<span>*</span></label>
                                     <select name="Estadu" id="Estadu">
-                                        <option value="Selecione...">Selecione...</option>
+                                        <option value="selecione">Selecione...</option>
                                         <!-- Acre -->
                                         <option value="Rio Branco">Rio Branco</option>
                                         <option value="Cruzeiro do Sul">Cruzeiro do Sul</option>
@@ -757,7 +769,7 @@
                             <p>Sugestões: Identificar a área ou projeto desejado, restrições ou condições para a doação, mencionar preferências de reconhecimento ou anonimato, confirmar qualquer procedimento específico necessário para a doação, etc.</p>
                         </div>
                         <div class="confirm">
-                            <button type="button" class="confirmar" onclick="adicionarItem2()">Salvar</button>
+                            <button type="button" class="confirmar" onclick="adicionarDoacao()">Salvar</button>
                             <a href="doacoes.html"><button type="button" class="cancelar">Cancelar</button></a>
                         </div>
                     </div>
@@ -802,15 +814,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Pronto para sair?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Selecione "Logout" abaixo se você está pronto para terminar a sessão.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="/prototiposite/OngAdapvindexswitch/loginNovo.html">Logout</a>
                 </div>
             </div>
         </div>
@@ -832,7 +844,7 @@
     <!-- VALIDAÇÃO -->
     <script src="js/validaocao.js"></script>
     <!-- ADICIONAR TABELA -->
-    <script src="js/tabela.js"></script>
+    <script src="js/tabelaDoacoes.js"></script>
 </body>
 
 </html>
