@@ -345,7 +345,7 @@
                             <div class="quebra-volun-nomes">
                                 <div class="opcao-geral-nomes">
                                     <label for="">Nome do Voluntário<span>*</span></label>
-                                    <select id="tags" multiple="multiple" style="width: 100%;">
+                                    <select id="volun" multiple="multiple" style="width: 100%;">
                                         <option value="Gabriel">Gabriel</option>
                                         <option value="Gabriela">Gabriela</option>
                                         <option value="João">João</option>
@@ -353,6 +353,7 @@
                                         <option value="Melyna">Melyna</option>
                                         <!-- Adicione outras opções conforme necessário -->
                                       </select>
+                                      <p id="erroVolun" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-nomes">
                                     <label for="">Nome da Empresa<span>*</span></label>
@@ -364,22 +365,26 @@
                                         <option value="Melyna">Melyna</option>
                                         <!-- Adicione outras opções conforme necessário -->
                                       </select>
+                                      <p id="erroEmpresa" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
                                 <div class="opcao-geral-docs">
                                     <label for="">Nome do Projeto<span>*</span></label>
                                     <input type="text" id="nome" placeholder="Digite o nome do projeto"/>
+                                    <p id="erroNome" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">Data<span>*</span></label>
-                                    <input type="text" id="datanascimento" placeholder="dd/mm/aaaa" maxlength="10"onkeyup="vData(this)">
+                                    <input type="text" id="campoData" placeholder="dd/mm/aaaa" maxlength="10"onkeyup="vData(this)">
+                                    <p id="erroData" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
                                 <div class="opcao-geral-docs">
                                     <label for="">Descrição<span>*</span></label>
-                                    <textarea cols="50" rows="10"></textarea>
+                                    <textarea cols="50" rows="10" id="descricao"></textarea>
+                                    <p id="erroDescricao" class="mensagemErro"></p>
                                 </div>
                             </div>
                         </div>
@@ -557,8 +562,8 @@
                                 etc.</p>
                         </div>
                         <div class="confirm">
-                            <button type="button" class="confirmar" onclick="adicionarItem2()">Salvar</button>
-                            <a href="cards.html"><button type="button" class="cancelar">Cancelar</button></a>
+                            <button type="button" class="confirmar" onclick="adicionarProjeto()">Salvar</button>
+                            <a href="projetos.html"><button type="button" class="cancelar">Cancelar</button></a>
                         </div>
                     </div>
 
@@ -632,10 +637,11 @@
     <!-- VALIDAÇÃO -->
     <script src="js/validaocao.js"></script>
     <!-- ADICIONAR TABELA -->
-    <script src="js/tabela.js"></script>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>\
     <script src="js/multiselect.js"></script>
+    <script src="js/tabelaProj.js"></script>
 </body>
 
 </html>

@@ -47,8 +47,12 @@ function validarCPF() {
             }
         }
         if (ok == 0) {
-            alert("Ops... Ocorreu um problema... CPF inválido!");
-            //event.target.focus();
+            document.getElementById("erroCPF").textContent = "É necessário informar um CPF válido.";
+            event.target.style.border = "2px solid red"
+        }
+        else{
+            document.getElementById("erroCPF").textContent = "";
+            event.target.style.border = ""
         }
     }
 }
@@ -76,12 +80,33 @@ function vData() {
 
     // Adiciona a segunda barra após o mês
     if (data.length >= 5) {
-        data = data.substring(0, 5) + '/' + data.substring(5, 9);
+        data = data.substring(0, 5) + '/' + data.substring(5);
+    }
+
+    // Verifica se a data é válida
+    if (data.length === 10) {
+        var partes = data.split('/');
+        var dia = parseInt(partes[0], 10);
+        var mes = parseInt(partes[1], 10);
+        var ano = parseInt(partes[2], 10);
+
+        if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 1900 || ano > 2023) {
+            document.getElementById("erroData").textContent = "É necessário informar uma data válida";
+            event.target.value = '';
+            event.target.style.border = "2px solid red"
+            return;
+        }else{
+            document.getElementById("erroData").textContent = "";
+            event.target.style.border = ""
+
+
+        }
     }
 
     // Atualiza o valor do campo com a data formatada
     event.target.value = data;
 }
+
 
 // RG //
 function vRG() {
@@ -93,7 +118,7 @@ function vRG() {
     // Adiciona o primeiro ponto após os dois primeiros dígitos
     if (rg.length >= 2) {
         rg = rg.substring(0, 2) + '.' + rg.substring(2);
-    }
+    }   
 
     // Adiciona o segundo ponto após os cinco primeiros dígitos
     if (rg.length >= 6) {

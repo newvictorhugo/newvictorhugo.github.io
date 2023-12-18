@@ -23,7 +23,14 @@
     <link href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/css/sb-admin-2.min.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
+    <style>
+        .div-principal .opcao-foto p{
+            background-color:transparent !important;
+            color: red !important;
+            margin: 0 !important;
+            margin-bottom: 0 !important;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -347,6 +354,7 @@
                                 <div class="opcao-geral-nomes">
                                     <label for="">Nome do adotante<span>*</span></label>
                                     <input type="text" id="nome" class="nomecompleto" placeholder="Digite o nome do voluntário">
+                                    <p id="erroNome" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-nomes">
                                     <label for="">Nome do animal<span>*</span></label>
@@ -358,6 +366,7 @@
                                         <option value="Melyna">Melyna</option>
                                         <!-- Adicione outras opções conforme necessário -->
                                       </select>
+                                      <p id="erroNomeAnimal" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
@@ -365,17 +374,20 @@
                                     <label for="">CPF<span>*</span></label>
                                     <input type="text" id="campoCPF" placeholder="000.000.000-00" onkeyup="mCpf(this)"
                                         maxlength="14" onblur="validarCPF(this)" /> 
+                                    <p id="erroCPF" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">RG<span>*</span></label>
                                     <input type="text" id="campoRG" placeholder="00.000.000-0" maxlength="12" onkeyup="vRG(this)">
+                                    <p id="erroRG" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
                                 <div class="opcao-geral-divs">
                                     <label for="">Nascimento<span>*</span></label>
-                                    <input type="text" id="datanascimento" placeholder="dd/mm/aaaa" maxlength="10"
+                                    <input type="text" id="campoData" placeholder="dd/mm/aaaa" maxlength="10"
                                         onkeyup="vData(this)">
+                                    <p id="erroData" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Nacionalidade<span>*</span></label>
@@ -383,6 +395,7 @@
                                         <option value="Brasileiro">Brasileiro</option>
                                         <option value="Estrangeiro">Estrangeiro</option>
                                     </select>
+                                    <p id="erroNacionalidade" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Gênero</label>
@@ -392,6 +405,7 @@
                                         <option value="Feminino">Feminino</option>
                                         <option value="Indefinido">Não definido</option>
                                     </select>
+                                    <p id="erroGenero" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <h6 class="titulocontato">Contatos<span>*</span></h6>
@@ -407,6 +421,7 @@
                                     <div class="opcao-geral-divss">
                                         <input type="text" id="campoCel" placeholder="(00)00000-0000" maxlength="14"
                                             onkeyup="mTel(this)">
+                                        <p id="erroContato" class="mensagemErro"></p>
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <select name="wpp" id="wpp">
@@ -493,33 +508,37 @@
                                 <div class="opcao-geral-divs">
                                     <label for="">CEP<span>*</span></label>
                                     <input type="text" id="campoCEP" onkeypress="mCEP(this)" maxlength="10" placeholder="00.000-000">
+                                    <p id="erroCEP" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-nomes">
                                     <label for="">Rua<span>*</span></label>
                                     <input type="text" id="campoRua" class="nomecompleto" placeholder="Rua da empresa">
+                                    <p id="erroRua" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-docs">
                                     <label for="">Número<span>*</span></label>
                                     <input type="number" id="campoNum" placeholder="xxx">
+                                    <p id="erroNum" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
 
                                 <div class="opcao-geral-docs">
                                     <label for="">Bairro<span>*</span></label>
-                                    <input type="text" placeholder="Bairro da Empresa">
+                                    <input type="text" id="bairro" placeholder="Bairro da Empresa">
+                                    <p id="erroBairro" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Complemento</label>
-                                    <input type="text" id="datanascimento" placeholder="">
+                                    <input type="text" id="complemento" placeholder="">
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
 
                                 <div class="opcao-geral-divs">
                                     <label for="">Cidade<span>*</span></label>
-                                    <select name="City" id="Citys">
-                                        <option value="Selecione...">Selecione...</option>
+                                    <select name="cidade" id="cidade">
+                                        <option value="selecione">Selecione...</option>
                                         <option value="Americana">Americana</option>
                                         <option value="Araraquara">Araraquara</option>
                                         <option value="Atibaia">Atibaia</option>
@@ -562,11 +581,12 @@
                                         <option value="Suzano">Suzano</option>
                                         <option value="Taubaté">Taubaté</option>
                                     </select>
+                                    <p id="erroCidade" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Estado<span>*</span></label>
-                                    <select name="Estadu" id="Estadu">
-                                        <option value="Selecione...">Selecione...</option>
+                                    <select name="estado" id="estado">
+                                        <option value="selecione">Selecione...</option>
                                         <!-- Acre -->
                                         <option value="Rio Branco">Rio Branco</option>
                                         <option value="Cruzeiro do Sul">Cruzeiro do Sul</option>
@@ -649,6 +669,7 @@
                                         <option value="Uberlândia">Uberlândia</option>
                                         <option value="Contagem">Contagem</option>
                                     </select>
+                                    <p id="erroEstado" class="mensagemErro"></p>
                                 </div>
                             </div>
                         </div>
@@ -661,8 +682,8 @@
                             <p>Sugestões: Comprometimento com cuidados adequados, consideração financeira, tempo para interação e treinamento, preparação do ambiente, pesquisa sobre necessidades do animal e disposição para um período de adaptação, etc.</p>
                         </div>
                         <div class="confirm">
-                            <button type="button" class="confirmar" onclick="adicionarItem2()">Salvar</button>
-                            <a href="cards.html"><button type="button" class="cancelar">Cancelar</button></a>
+                            <button type="button" class="confirmar" onclick="adicionarAdocao()">Salvar</button>
+                            <a href="adocoes.html"><button type="button" class="cancelar">Cancelar</button></a>
                         </div>
                     </div>
 
@@ -736,7 +757,7 @@
     <!-- VALIDAÇÃO -->
     <script src="js/validaocao.js"></script>
     <!-- ADICIONAR TABELA -->
-    <script src="js/tabela.js"></script>
+    <script src="js/tabelaAdocoes.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>\
     <script src="js/multiselect.js"></script>

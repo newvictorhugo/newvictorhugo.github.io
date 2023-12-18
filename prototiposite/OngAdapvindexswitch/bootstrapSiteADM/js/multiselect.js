@@ -1,12 +1,12 @@
 $(document).ready(function() {
-    $('#tags').select2({
+    $('#volun').select2({
         tags: true,
         tokenSeparators: [','],
         placeholder: 'Digite os nomes dos voluntário participantes',
         // Opções adicionais conforme necessário
     });
 
-    $('#tags').on('change', function() {
+    $('#volun').on('change', function() {
         // Aqui você pode lidar com a alteração das opções selecionadas, se necessário
         var selectedOptions = $(this).val();
         console.log(selectedOptions);

@@ -11,7 +11,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="/prototiposite/OngAdapvindexswitch/imagens/CatDogScPng Oficial.png">
 
     <title>GuiaPet - Cadastrar Voluntários</title>
-
+    <style>
+        p{
+            margin: 0 !important;
+        }
+    </style>
     <!-- Custom fonts for this template-->
     <link href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/vendor/fontawesome-free/css/all.min.css"
         rel="stylesheet" type="text/css">
@@ -348,28 +352,32 @@
                                         <option value="Pessoa Fisica">Pessoa Física</option>
                                         <option value="Pessoa Juridica">Pessoa Jurídica</option>
                                     </select>
+                                    <p id="erroTipoPessoa" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-nomes">
                                     <label for="">Nome Completo<span>*</span></label>
                                     <input type="text" id="nome" class="nomecompleto"
                                         placeholder="Digite o nome do voluntário">
+                                    <p id="erroNome" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-doc">
                                 <div class="opcao-geral-docs">
                                     <label for="">CPF<span>*</span></label>
-                                    <input type="text" id="campoCPF" placeholder="000.000.000-00" onkeyup="mCpf(this)"
-                                        maxlength="14" onblur="validarCPF(this)" />
+                                    <input type="text" id="campoCPF" placeholder="000.000.000-00" onkeyup="mCpf(this)" maxlength="14" onblur="validarCPF(this)" />
+                                    <p id="erroCPF" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-docs">
-                                    <label for="">RG</label>
+                                    <label for="">RG<span>*</span></label>
                                     <input type="text" id="campoRG" placeholder="00.000.000-0" maxlength="12" onkeyup="vRG(this)">
+                                    <p id="erroRG" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <div class="quebra-volun-detail">
                                 <div class="opcao-geral-divs">
                                     <label for="">Nascimento<span>*</span></label>
-                                    <input type="text" id="datanascimento" placeholder="dd/mm/aaaa" maxlength="10"onkeyup="vData(this)">
+                                    <input type="text" id="campoData" placeholder="dd/mm/aaaa" maxlength="10"onkeyup="vData(this)">
+                                    <p id="erroData" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-divs">
                                     <label for="">Nacionalidade<span>*</span></label>
@@ -377,15 +385,17 @@
                                         <option value="Brasileiro">Brasileiro</option>
                                         <option value="Estrangeiro">Estrangeiro</option>
                                     </select>
+                                    <p id="erroNacionalidade" class="mensagemErro"></p>
                                 </div>
                                 <div class="opcao-geral-divs">
-                                    <label for="">Gênero</label>
+                                    <label for="">Gênero<span>*</span></label>
                                     <select name="genero" id="genero">
                                         <option value="selecione">Selecione...</option>
                                         <option value="Masculino">Masculino</option>
                                         <option value="Feminino">Feminino</option>
                                         <option value="Indefinido">Não definido</option>
                                     </select>
+                                    <p id="erroGenero" class="mensagemErro"></p>
                                 </div>
                             </div>
                             <h6 class="titulocontato">Contatos<span>*</span></h6>
@@ -401,6 +411,7 @@
                                     <div class="opcao-geral-divss">
                                         <input type="text" id="campoCel" placeholder="(00)00000-0000" maxlength="14"
                                             onkeyup="mTel(this)">
+                                        <p id="erroContato" class="mensagemErro"></p>
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <select name="wpp" id="wpp">
@@ -513,7 +524,7 @@
                                 <div class="opcao-geral-divs">
                                     <label for="">Cidade<span>*</span></label>
                                     <select name="City" id="Citys">
-                                        <option value="Selecione...">Selecione...</option>
+                                        <option value="selecione">Selecione...</option>
                                         <option value="Americana">Americana</option>
                                         <option value="Araraquara">Araraquara</option>
                                         <option value="Atibaia">Atibaia</option>
@@ -560,7 +571,7 @@
                                 <div class="opcao-geral-divs">
                                     <label for="">Estado<span>*</span></label>
                                     <select name="Estadu" id="Estadu">
-                                        <option value="Selecione...">Selecione...</option>
+                                        <option value="selecione">Selecione...</option>
                                         <!-- Acre -->
                                         <option value="Rio Branco">Rio Branco</option>
                                         <option value="Cruzeiro do Sul">Cruzeiro do Sul</option>
@@ -655,7 +666,7 @@
                             <p>Sugestões: Alergias, preferência de afazeres, aptidões, dias disponíveis para ajudar, etc.</p>
                         </div>
                         <div class="confirm">
-                            <button type="button" class="confirmar" onclick="adicionarVoluntario()x">Salvar</button>
+                            <button type="button" class="confirmar" onclick="adicionarVoluntario()">Salvar</button>
                             <a href="cards.html"><button type="button" class="cancelar">Cancelar</button></a>
                         </div>
                     </div>
