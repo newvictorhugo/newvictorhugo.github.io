@@ -159,9 +159,13 @@ function mTel () {
     var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     if (!regex.test(email)) {
-        alert("Ops... Ocorreu um problema... E-mail precisa ter @ e .com");
-        //event.target.focus();
-    }
+        document.getElementById("erroEmail").textContent = "É necessário informar um email válido";
+            event.target.style.border = "2px solid red"
+            return;
+        }else{
+            document.getElementById("erroEmail").textContent = "";
+            event.target.style.border = ""
+        }
 }
 
 function vCampos() {

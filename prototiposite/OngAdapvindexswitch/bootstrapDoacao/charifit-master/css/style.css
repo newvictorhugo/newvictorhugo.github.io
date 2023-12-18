@@ -3199,4 +3199,7 @@ h6 {
   .wave{
     margin-top: 1000px;
   }
+  .footer{
+    display: none; /*! Tirar depois */
+  }
 }

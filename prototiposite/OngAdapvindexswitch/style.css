@@ -55,7 +55,10 @@ body{
     display: flex;
     margin: 20px 10px 10px 0;
 }
-
+.mensagemErro {
+  color: red;
+  font-size: 12px;
+}
     /* ------logo------ */
 .imglogo{
     display: flex;

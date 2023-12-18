@@ -82,7 +82,7 @@
                         <div class="help_content">
                             <h4>Alimentação</h4>
                             <p>Sua doação alimenta nossos animais. Faça a diferença agora!</p>
-                            <a href="#" class="read_more">Saiba mais</a>
+                            <a style="display: none;" href="#" class="read_more">Saiba mais</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                         <div class="help_content">
                             <h4>Manutenção</h4>
                             <p>Sua doação mantém nosso ambiente de cuidado dos animais.</p>
-                            <a href="#" class="read_more">Saiba mais</a>
+                            <a style="display: none;" href="#" class="read_more">Saiba mais</a>
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                         <div class="help_content">
                             <h4>Resgate</h4>
                             <p>Sua doação é a chave para mais resgates de animais necessitados.</p>
-                            <a href="#" class="read_more">Saiba mais</a>
+                            <a style="display: none;" href="#" class="read_more">Saiba mais</a>
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                                 <i class="fi fi-rr-paw"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">2000</h3>
+                                <h3 class="counter">2113</h3>
                                 <p>Animais Salvos</p>
                             </div>
                         </div>
@@ -193,7 +193,7 @@
                                 <i class="fi fi-rs-hands-usd"></i>
                             </div>
                             <div class="events">
-                                <h3>R$<span class="counter">10000</span></h3>
+                                <h3>R$<span class="counter">35000</span></h3>
                                 <p>Valor gasto por ano</p>
                             </div>
                         </div>
@@ -204,7 +204,7 @@
                                 <i class="fi fi-rr-following"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">120</h3>
+                                <h3 class="counter">42</h3>
                                 <p>Voluntarios ativos</p>
                             </div>
                         </div>
@@ -234,23 +234,28 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6">
-                                    <input type="text" id="volunteer-form-name" name="volunteer-name" class="form-control" placeholder="Nome Completo" required>
+                                    <input type="text" id="volunteer-form-name" name="volunteer-name" class="form-control" placeholder="Nome Completo" >
+                                    <p id="erroNome" class="mensagemErro"></p> 
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="email" id="volunteer-email" name="volunteer-email" class="form-control" placeholder="Email" required>
+                                    <input type="email" id="volunteer-email" name="volunteer-email" class="form-control" placeholder="Email" onblur="vEmail(this)" >
+                                    <p id="erroEmail" class="mensagemErro"></p> 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6">
-                                    <input type="text" id="volunteer-phone" name="volunteer-phone" class="form-control" placeholder="Telefone" required>
+                                    <input type="text" id="volunteer-phone" name="volunteer-phone" class="form-control" placeholder="Telefone" onkeyup="mTel(this)" maxlength="14" >
+                                    <p id="erroTel" class="mensagemErro"></p> 
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" id="volunteer-address" name="volunteer-address" class="form-control" placeholder="Endereço" required>
+                                    <input type="text" id="volunteer-address" name="volunteer-address" class="form-control" placeholder="Endereço" >
+                                    <p id="erroEndereco" class="mensagemErro"></p> 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <textarea id="volunteer-message" name="volunteer-message" cols="30" rows="5" class="form-control message" placeholder="Mensagem" required></textarea>
+                                    <p id="erroMsg" class="mensagemErro"></p> 
                                 </div>
                             </div>
                             <button id="volunteer-submit" class="default-btn" type="submit"><strong>Seja voluntário</strong> <span></span></button>
@@ -362,6 +367,7 @@
       </footer>
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script src="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/js/validaocao.js"></script>
     <!-- footer_end  -->
 
     <!-- link that opens popup -->

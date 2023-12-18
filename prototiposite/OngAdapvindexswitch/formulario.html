@@ -16,10 +16,10 @@
             <a href="index.html" class="logo">ADAPV</a>
         </div>
         <nav class="bn">
-            <a class="bn" href="index.html">Inicio</a>
-            <a class="bn" href="adotar.html">Adote</a>
-            <a class="bn" href="ajude.html">Ajude-nos</a>
-            <a class="bn" href="index.html #contato">Contato</a>
+          <a href="index.html" class="ativo bn">Inicio</a>
+          <a class="bn" href="adotar.html">Adote</a>
+          <a class="bn" href="/prototiposite/OngAdapvindexswitch/bootstrapDoacao/charifit-master/ajudenos.html">Ajude-Nos</a>
+          <a class="bn" href="#contato">Contato </a>
             <a class="bn" href="loginNovo.html">Login</a>
         </nav>
     </header>
@@ -29,20 +29,28 @@
                 <br><br>
                 <div>
                     <label for="nomeani">Quem você deseja adotar? <span class="red">*</span></label>
-                    <input type="text" name="nomeani" placeholder="Nome do animal" required><br><br>
+                    <input type="text" name="nomeani" placeholder="Nome do animal"><br><br>
+                    <p id="erroNomeAni" class="mensagemErro"></p>
                     <label for="nome">Nome do adotante <span class="red">*</span></label>
-                    <input type="text" name="nome" placeholder="Nome Completo" required><br><br>
+                    <input type="text" id="nome" name="nome" placeholder="Nome Completo"><br><br>
+                    <p id="erroNome" class="mensagemErro"></p>  
                     <label for="email">E-mail <span class="red">*</span></label>
-                    <input type= "email" name="email" placeholder="E-mail para contato" required><br><br>
+                    <input type= "email" id="email" name="email" placeholder="E-mail para contato" onblur="vEmail(this)"><br><br>
+                    <p id="erroEmail" class="mensagemErro"></p>  
                     <label for="tel">Telefone <span class="red">*</span></label>
-                    <input type="tel" name="tel" placeholder="Telefone para contato(DDD)XXXXX-XXXX" required><br><br>
+                    <input type="tel" id="tel" name="tel" placeholder="(DDD)XXXXX-XXXX" onkeyup="mTel(this)" maxlength="14"><br><br>
+                    <p id="erroTel" class="mensagemErro"></p> 
                     <label for="dtnasc">Data de Nascimento <span class="red">*</span></label>
-                    <input type="date" name="dtnasc" required><br><br>
+                    <input type="text" id="campoData" placeholder="dd/mm/aaaa" maxlength="10"onkeyup="vData(this)"><br><br>
+                    <p id="erroData" class="mensagemErro"></p>  
                     <label for="endereco">Endereço <span class="red">*</span></label>
-                    <input type="text" name="endereco" placeholder="Endereço Completo"><br><br>
+                    <input type="text" id="endereco" name="endereco" placeholder="Endereço Completo"><br><br>
+                    <p id="erroEndereco" class="mensagemErro"></p> 
                     <label for="msg">Mensagem para adoção <span class="red">*</span></label>
-                    <input type="text" name="msg" placeholder="Conte-nos o por que você deseja adotar um pet"><br><br>
-                    <button type="submit" class="enviar">Enviar</button><br>
+                    <input type="text" id="msg" name="msg" placeholder="Conte-nos o por que você deseja adotar um pet"><br><br>
+                    <p id="erroMsg" class="mensagemErro"></p> 
+                    <button type="submit" class="enviar">Enviar</button><br> <br>
+                    <p class="aviso" style="display: none; background-color: #1cc88a; color: white;">Sua mensagem foi enviada com sucesso. Em breve a ONG ADAPV entrará em contato pelo telefone ou email informado!! :D</p>
                 </div>
             </form><br>
 
@@ -59,8 +67,8 @@
                 7. Eduque o animal com amor e limites, especialmente os filhotes. <br>
                 
                 Lembre-se de que a adoção de um animal é um compromisso a longo prazo, exigindo atenção, cuidado e amor contínuos.</p>
-                <br>
-                <br>
+                
+                  <br><br><br><br><br><br><br>
     </section>
 </section>  <footer class="footer">
     <div class="waves">
@@ -70,32 +78,39 @@
       <div class="wave" id="wave4"></div>
     </div>
     <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/ong.adapv/?locale=pt_BR">
           <ion-icon name="logo-facebook"></ion-icon>
         </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
+      <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/OAdapv">
           <ion-icon name="logo-twitter"></ion-icon>
         </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/ongadpv/">
           <ion-icon name="logo-instagram"></ion-icon>
         </a></li>
     </ul>
     <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="#">Inicio</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Sobre</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Serviços</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Time</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Contato</a></li>
-  
-      </ul>
+      <li class="menu__item"><a class="menu__link" href="index.html">Inicio</a></li>
+      <li class="menu__item"><a class="menu__link" href="/prototiposite/OngAdapvindexswitch/bootstrapDoacao/charifit-master/ajudenos.html">Sobre</a></li>
+      <li class="menu__item"><a class="menu__link" href="/prototiposite/OngAdapvindexswitch/bootstrapDoacao/charifit-master/ajudenos.html">Serviços</a></li>
+      <li class="menu__item"><a class="menu__link" href="https://www.instagram.com/ongadpv/">Time</a></li>
+      <li class="menu__item"><a class="menu__link" href="index.html#contato">Contato</a></li>
+    </ul>
     <p>&copy;2023 WireLock | All Rights Reserved</p>
   </footer>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="./scripts.js"></script>
-    
+  <script src="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/js/validaocao.js"></script>
+  <script src="./scripts.js"></script>
+  <script src="validaform.js"></script>
+  
+  <script>
+    window.onload = function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var nomeAnimal = urlParams.get('nomeani');
+        if (nomeAnimal) {
+            document.getElementsByName('nomeani')[0].value = nomeAnimal;
+        }
+    }
+</script>  
 </body>
 </html>

@@ -54,6 +54,10 @@ body{
     margin-left: 35px;
     transition: 0.5s;
 }
+.mensagemErro {
+    color: red;
+    font-size: 12px;
+}
 .bn a:hover{
     color: orange;
 }
