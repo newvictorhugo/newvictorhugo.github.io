@@ -42,15 +42,17 @@
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Log In</h4>
 											<div class="form-group">
-												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" onblur="vEmail(this)">
 												<i class="input-icon uil uil-at"></i>
+												<p id="erroEmail" class="mensagemErro"></p>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" >
 												<i class="input-icon uil uil-lock-alt"></i>
+												<p id="erroSenha" class="mensagemErro"></p>
 											</div>
-											<a href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/index.html" class="btn mt-4">submit</a>
-                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+											<a href="/prototiposite/OngAdapvindexswitch/bootstrapSiteADM/index.html" class="btn mt-4 enviar">submit</a>
+                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Esqueceu a senha?</a></p>
 				      					</div>
 			      					</div>
 			      				</div>
@@ -83,5 +85,6 @@
 	</div>
 <!-- partial -->
 <script src="bootstrapSiteADM/js/validaocao.js"></script>
+<script src="scripts2.js"></script>
 </body>
 </html>

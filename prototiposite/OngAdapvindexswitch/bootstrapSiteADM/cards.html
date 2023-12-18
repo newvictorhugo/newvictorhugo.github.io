@@ -401,12 +401,8 @@
                             <h6 class="titulocontato">Contatos<span>*</span></h6>
                             <div class="quebra-volun-contato">
                                 <div class="celular">
-                                    <div class="opcao-geral-divs">
-                                        <select name="contatos" id="contatos" onchange="selecionarOpcao(this.value)">
-                                            <option value="celular">Celular</option>
-                                            <option value="email">Email</option>
-                                            <option value="residencial">Residencial</option>
-                                        </select>
+                                    <div class="opcao-geral-lateral-contato">
+                                        <h6>Celular</h6>
                                     </div>
                                     <div class="opcao-geral-divss">
                                         <input type="text" id="campoCel" placeholder="(00)00000-0000" maxlength="14"
@@ -421,7 +417,7 @@
                                         </select>
                                     </div>
                                     <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Observações">
+                                        <input type="text" id="obsCel" placeholder="Observações">
                                     </div>
                                     <div class="botoes">
                                         <div class="favorito">
@@ -429,27 +425,23 @@
                                                     id="favorito-icon" icon="bi:star"></iconify-icon></button>
                                         </div>
                                         <div class="excluir">
-                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
-                                                    icon="tabler:trash"></iconify-icon></button>
+                                            <button id="excluir-button" onclick="limparCamposCel()"><iconify-icon id="excluir-icon" icon="tabler:trash"></iconify-icon></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="quebra-volun-contato">
                                 <div class="email">
-                                    <div class="opcao-geral-divs">
-                                        <select name="contatos" id="contatos" onchange="selecionarOpcao(this.value)">
-                                            <option value="email">Email</option>
-                                            <option value="celular">Celular</option>
-                                            <option value="residencial">Residencial</option>
-                                        </select>
+                                    <div class="opcao-geral-lateral-contato">
+                                        <h6>Email</h6>
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <input type="text" id="campoEmail" class="textEmail" placeholder="Digite seu email"
                                             onblur="vEmail(this)">
+                                            <p id="erroEmail" class="mensagemErro"></p>
                                     </div>
                                     <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Observações">
+                                        <input type="text" id="obsEmail" placeholder="Observações"> 
                                     </div>
                                     <div class="botoes">
                                         <div class="favorito">
@@ -457,27 +449,22 @@
                                                     id="favorito-icon" icon="bi:star"></iconify-icon></button>
                                         </div>
                                         <div class="excluir">
-                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
-                                                    icon="tabler:trash"></iconify-icon></button>
+                                            <button id="excluir-button" onclick="limparCamposEmail()" onclick="limparCamposEmail()"><iconify-icon id="excluir-icon" icon="tabler:trash"></iconify-icon></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="quebra-volun-contato">
                                 <div class="residencial">
-                                    <div class="opcao-geral-divs">
-                                        <select name="contatos" id="contatos" onchange="selecionarOpcao(this.value)">
-                                            <option value="residencial">Residencial</option>
-                                            <option value="celular">Celular</option>
-                                            <option value="email">Email</option>
-                                        </select>
+                                    <div class="opcao-geral-lateral-contato">
+                                        <h6>Telefone</h6>
                                     </div>
                                     <div class="opcao-geral-divs">
                                         <input type="text" id="campoTel" placeholder="(00)0000-0000" maxlength="13"
                                             onkeyup="mTel(this)">
                                     </div>
                                     <div class="opcao-geral-divs">
-                                        <input type="text" placeholder="Observações">
+                                        <input type="text" id="obsTel" placeholder="Observações">
                                     </div>
                                     <div class="botoes">
                                         <div class="favorito">
@@ -485,8 +472,7 @@
                                                     id="favorito-icon" icon="bi:star"></iconify-icon></button>
                                         </div>
                                         <div class="excluir">
-                                            <button id="excluir-button"><iconify-icon id="excluir-icon"
-                                                    icon="tabler:trash"></iconify-icon></button>
+                                            <button id="excluir-button" onclick="limparCamposRes()"><iconify-icon id="excluir-icon" icon="tabler:trash"></iconify-icon></button>
                                         </div>
                                     </div>
                                 </div>
@@ -740,6 +726,7 @@
     <script src="js/tabela.js"></script>
 
     <script src="js/tabelaVolun.js"></script>
+    <script src="limparcampos.js"></script>
 </body>
 
 </html>

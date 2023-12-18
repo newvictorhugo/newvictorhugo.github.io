@@ -68,7 +68,43 @@ function vEmail() {
     var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     if (!regex.test(email)) {
-        alert("Ops... Ocorreu um problema... E-mail precisa ter @ e .com");
-        //event.target.focus();
-    }
+        document.getElementById("erroEmail").textContent = "É necessário informar um email válido";
+            event.target.style.border = "2px solid red"
+            return;
+        }else{
+            document.getElementById("erroEmail").textContent = "";
+            event.target.style.border = ""
+        }
 }
+
+document.querySelector(".enviar").addEventListener("click", function(event) {
+    let isValid = true;
+
+    let emaillogin = document.getElementById('logemail').value;
+    let senhalogin = document.getElementById('logpass').value;
+
+    // Verificação do email
+    if(!emaillogin.trim()){
+        document.getElementById("erroEmail").textContent = "É necessário informar um email válido";
+        document.getElementById("logemail").style.border = "2px solid red";
+        isValid = false;
+    } else {
+        document.getElementById("erroEmail").textContent = "";
+        document.getElementById("logemail").style.border = "1px solid black";
+    }
+
+    // Verificação da senha
+    if(!senhalogin.trim()){
+        document.getElementById("erroSenha").textContent = "É necessário informar uma senha";
+        document.getElementById("logpass").style.border = "2px solid red";
+        isValid = false;
+    } else {
+        document.getElementById("erroSenha").textContent = "";
+        document.getElementById("logpass").style.border = "1px solid black";
+    }
+
+    // Impede o envio do formulário se as validações falharem
+    if (!isValid) {
+        event.preventDefault();
+    }
+});

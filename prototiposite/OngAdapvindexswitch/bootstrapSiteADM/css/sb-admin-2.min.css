@@ -370,6 +370,28 @@ body::after {
     border: 1px solid #000;
 }
 
+.opcao-geral-lateral-contato{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbdbdb;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    width: 70px;
+    height: 30px;
+
+}
+
+.celular, .email, .residencial{
+    background-color: #f0f0f0;
+}
+.celular{
+    border-radius: 5px 5px 0 0;
+}
+.residencial{
+    border-radius: 0 0 5px 5px;
+}
+
 
 hr {
     box-sizing: content-box;
